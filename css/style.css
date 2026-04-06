@@ -369,6 +369,8 @@ section {
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
@@ -382,7 +384,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -394,7 +396,6 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  min-height: 220px;
 }
 
 /* Hummingbird teal circle decoration */
@@ -445,6 +446,9 @@ section {
 
 .product-card-body {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .product-card-body h3 {
@@ -473,6 +477,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  margin-top: auto;
 }
 
 .product-link:hover {
