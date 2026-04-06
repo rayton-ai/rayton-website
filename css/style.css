@@ -402,16 +402,17 @@ section {
   .overview-card-img.hb-circle {
     position: relative;
     overflow: hidden;
+    max-height: 220px;
   }
 
   .product-card-img.hb-circle .teal-circle,
   .overview-card-img.hb-circle .teal-circle {
     position: absolute;
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     background: rgba(78, 205, 196, 0.55);
-    bottom: 5%;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 0;
