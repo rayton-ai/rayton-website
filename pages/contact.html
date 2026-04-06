@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – RAYTON Sensor Solutions</title>
+  <meta name="description" content="RAYTON Sensor Solutions 문의하기 - Seyond LiDAR 한국 총판 연락처.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <div>
+          <span class="logo-text">RAYTON</span>
+          <span class="logo-sub">Sensor Solutions</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="products.html">LiDARs</a></li>
+        <li><a href="software.html">SOFTWARE</a></li>
+        <li><a href="applications.html">APPLICATIONS</a></li>
+        <li><a href="developer.html">DEVELOPER</a></li>
+        <li><a href="news.html">NEWS</a></li>
+        <li><a href="video.html">VIDEO</a></li>
+        <li><a href="contact.html" class="active">CONTACT</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <span class="section-label">CONTACT US</span>
+    <h1>온라인 문의</h1>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div>
+          <div class="contact-info-card fade-in">
+            <h3>Rayton Inc</h3>
+
+            <div class="contact-detail">
+              <div class="icon">📍</div>
+              <div class="info">
+                <h4>주소</h4>
+                <p>620, Teheranro 501,<br>Gangnam-gu, Seoul, Korea</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="icon">✉️</div>
+              <div class="info">
+                <h4>E-mail</h4>
+                <p><a href="mailto:info@rayton.ai" style="color:var(--accent);">info@rayton.ai</a></p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="icon">🌐</div>
+              <div class="info">
+                <h4>Website</h4>
+                <p><a href="https://rayton.ai" style="color:var(--accent);">rayton.ai</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Maps -->
+          <div class="fade-in" style="margin-top:1.5rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.0!2d127.06!3d37.508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4100000000%3A0x0!2z7ISc7Jq4IOqwleuCqOq1rCDthYztl6Trnbjroow1MDEgNjIw!5e0!3m2!1sko!2skr!4v1680000000000"
+              width="100%"
+              height="220"
+              style="border:0;display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="fade-in" style="margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            <a href="products.html" style="padding:1.25rem;background:var(--bg-light);border-radius:var(--radius);border:1px solid var(--border);text-decoration:none;text-align:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-size:1.5rem;margin-bottom:0.4rem;">&#x1F4E6;</div>
+              <div style="color:var(--text-white);font-size:0.85rem;font-weight:600;">제품 보기</div>
+            </a>
+            <a href="software.html" style="padding:1.25rem;background:var(--bg-light);border-radius:var(--radius);border:1px solid var(--border);text-decoration:none;text-align:center;transition:all 0.3s ease;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+              <div style="font-size:1.5rem;margin-bottom:0.4rem;">&#x1F4BB;</div>
+              <div style="color:var(--text-white);font-size:0.85rem;font-weight:600;">소프트웨어</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="fade-in">
+          <form id="contactForm" data-google-form="">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-group">
+                <label for="company">회사명</label>
+                <input type="text" id="company" name="entry.company" placeholder="회사명을 입력해 주세요">
+              </div>
+              <div class="form-group">
+                <label for="name">이름 <span style="color:#e74c3c;">*</span></label>
+                <input type="text" id="name" name="entry.name" required placeholder="담당자명">
+              </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div class="form-group">
+                <label for="phone">연락처 <span style="color:#e74c3c;">*</span></label>
+                <input type="tel" id="phone" name="entry.phone" required placeholder="010-0000-0000">
+              </div>
+              <div class="form-group">
+                <label for="email">이메일 <span style="color:#e74c3c;">*</span></label>
+                <input type="email" id="email" name="entry.email" required placeholder="email@example.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry-type">문의 유형 <span style="color:#e74c3c;">*</span></label>
+              <select id="inquiry-type" name="entry.type" required>
+                <option value="" disabled selected>선택해 주세요</option>
+                <option value="product">제품 문의</option>
+                <option value="tech">기술 지원</option>
+                <option value="partnership">파트너십 / 협력</option>
+                <option value="quote">견적 요청</option>
+                <option value="other">기타</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">문의 내용 <span style="color:#e74c3c;">*</span></label>
+              <textarea id="message" name="entry.message" required placeholder="문의 내용을 상세히 작성해 주세요."></textarea>
+            </div>
+
+            <div class="form-group" style="margin-bottom:2rem;">
+              <label style="display:flex;align-items:flex-start;gap:0.75rem;cursor:pointer;">
+                <input type="checkbox" required style="margin-top:4px;width:auto;">
+                <span style="font-size:0.85rem;color:var(--text-light);line-height:1.5;">
+                  개인정보 수집 및 이용에 동의합니다. 수집된 개인정보는 문의 응대 목적으로만 사용되며, 목적 달성 후 즉시 파기됩니다.
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">문의 보내기 →</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">RAYTON</div>
+          <span class="logo-sub">Sensor Solutions</span>
+          <p>Seyond LiDAR의 한국 총판사로서 다양한 산업군에 최적의 LiDAR 솔루션을 제공합니다.</p>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="products.html">LiDARs</a></li>
+            <li><a href="software.html">SIMPL ID</a></li>
+            <li><a href="software.html">SIMPL ITS</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="developer.html">Developer</a></li>
+            <li><a href="news.html">News</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Rayton Inc</li>
+            <li>620, Teheranro 501</li>
+            <li>Gangnam-gu, Seoul, Korea</li>
+            <li><a href="mailto:info@rayton.ai">info@rayton.ai</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Rayton Inc. All rights reserved.</span>
+        <span>Seyond LiDAR Korea</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+  <button class="back-to-top" aria-label="맨 위로">↑</button>
+</body>
+</html>
