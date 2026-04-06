@@ -398,12 +398,14 @@ section {
 }
 
 /* Hummingbird teal circle decoration */
-  .product-card-img.hb-circle {
+  .product-card-img.hb-circle,
+  .overview-card-img.hb-circle {
     position: relative;
     overflow: hidden;
   }
 
-  .product-card-img.hb-circle .teal-circle {
+  .product-card-img.hb-circle .teal-circle,
+  .overview-card-img.hb-circle .teal-circle {
     position: absolute;
     width: 180px;
     height: 180px;
@@ -416,7 +418,8 @@ section {
     pointer-events: none;
   }
 
-  .product-card-img.hb-circle img {
+  .product-card-img.hb-circle img,
+  .overview-card-img.hb-circle img {
     position: relative;
     z-index: 1;
     object-fit: contain !important;
