@@ -408,13 +408,13 @@ section {
   .product-card-img.hb-circle .teal-circle,
   .overview-card-img.hb-circle .teal-circle {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 113px;
+    height: 113px;
     border-radius: 50%;
     background: rgba(67, 150, 156, 0.66);
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 6%;
+    right: -15%;
+    left: auto;
     z-index: 0;
     pointer-events: none;
   }
