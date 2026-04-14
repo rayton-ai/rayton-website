@@ -4,11 +4,332 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video – RAYTON Sensor Solutions</title>
-  <meta name="description" content="Seyond LiDAR 제품 영상 및 데모 비디오.">
+  <meta name="description" content="Seyond LiDAR 제품 영상 및 데모 비디오 갤러리.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ====== Video Gallery Styles ====== */
+    .video-hero {
+      background: linear-gradient(135deg, #0a1a0f 0%, #132e1f 50%, #1f5035 100%);
+      color: #fff;
+      padding: 5rem 0 4rem;
+      margin-top: -4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .video-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(67,150,156,0.25), transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(78,205,196,0.18), transparent 60%);
+      pointer-events: none;
+    }
+    .video-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .video-hero .section-label {
+      color: #4ecdc4;
+      letter-spacing: 3px;
+    }
+    .video-hero h1 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 1rem 0 0.75rem;
+    }
+    .video-hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+    }
+    .featured-video {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      aspect-ratio: 16/9;
+      cursor: pointer;
+      background: #000;
+    }
+    .featured-video img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .featured-video:hover img { transform: scale(1.04); }
+    .featured-video .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+      transition: background 0.3s;
+    }
+    .featured-video:hover .play-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.4)); }
+    .featured-video .play-btn {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .featured-video:hover .play-btn { transform: scale(1.1); background: #fff; }
+    .featured-video .play-btn::after {
+      content: '';
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 18px 0 18px 28px;
+      border-color: transparent transparent transparent #1a4c33;
+      margin-left: 6px;
+    }
+    .featured-label {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(78,205,196,0.95);
+      color: #0a1a0f;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      z-index: 2;
+    }
+
+    /* Video Grid */
+    .video-section { padding: 5rem 0; }
+    .video-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .video-section-head h2 {
+      font-size: 1.8rem;
+      margin: 0.5rem 0 0;
+    }
+    .video-section-head .section-label {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .video-count {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+    .video-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .video-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: #000;
+      overflow: hidden;
+    }
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .video-card:hover .video-thumb img { transform: scale(1.08); }
+    .video-thumb .mini-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.45));
+      opacity: 0.95;
+      transition: opacity 0.3s;
+    }
+    .video-card:hover .video-thumb .mini-play { opacity: 1; }
+    .video-thumb .mini-play::before {
+      content: '';
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      position: absolute;
+      transition: transform 0.3s;
+    }
+    .video-card:hover .video-thumb .mini-play::before {
+      transform: scale(1.12);
+      background: #fff;
+    }
+    .video-thumb .mini-play::after {
+      content: '';
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 16px;
+      border-color: transparent transparent transparent #1a4c33;
+      position: relative;
+      z-index: 1;
+      margin-left: 4px;
+    }
+    .video-duration {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+    .video-info {
+      padding: 1.1rem 1.25rem 1.25rem;
+    }
+    .video-category {
+      display: inline-block;
+      background: rgba(78,205,196,0.12);
+      color: #1a4c33;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+    .video-title {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text);
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.8em;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding: 0.5rem;
+      background: #f5f7f6;
+      border-radius: 50px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .filter-btn {
+      padding: 0.6rem 1.3rem;
+      border: none;
+      background: transparent;
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-family: inherit;
+    }
+    .filter-btn:hover { color: var(--text); }
+    .filter-btn.active {
+      background: #1a4c33;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(26,76,51,0.25);
+    }
+
+    /* Video Modal (Lightbox) */
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 2rem;
+      animation: fadeIn 0.25s ease;
+    }
+    .video-modal.active { display: flex; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .video-modal-content {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+    }
+    .video-modal-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+    .video-modal-close:hover { transform: rotate(90deg); }
+    .video-modal iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 640px) {
+      .video-hero { padding: 3rem 0 2.5rem; }
+      .featured-video .play-btn { width: 72px; height: 72px; }
+      .featured-video .play-btn::after { border-width: 14px 0 14px 22px; }
+      .video-grid { grid-template-columns: 1fr; }
+      .filter-tabs { width: 100%; justify-content: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,117 +355,55 @@
     </div>
   </nav>
 
-  <div class="page-header">
-    <span class="section-label">VIDEO</span>
-    <h1>영상 갤러리</h1>
-  </div>
-
-  <section>
-    <div class="container">
-      <div style="text-align:center;" class="fade-in">
-        <h2 class="section-title">Seyond LiDAR 데모 영상</h2>
-        <p class="section-desc">Seyond LiDAR의 실제 작동 영상과 적용 사례를 확인하세요.</p>
-      </div>
-
-      <!-- Category: LiDAR Products -->
-      <div style="margin-bottom:1rem;">
-        <span class="section-label">LiDAR PRODUCTS</span>
-        <h3 class="section-title" style="font-size:1.5rem;">제품 데모 영상</h3>
-      </div>
-      <div class="content-grid">
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,var(--primary),var(--primary-light));color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>Falcon K — 초장거리 500m+ Point Cloud</h3>
-            <p>1550nm Eye-safe 파장의 Falcon K가 500m 이상에서 차량과 보행자를 정밀 감지하는 실시간 Point Cloud 데모입니다.</p>
-            <span style="background:rgba(78,205,196,0.1);color:var(--accent);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;font-weight:600;">Falcon K</span>
-          </div>
+  <!-- Hero with Featured Video -->
+  <section class="video-hero">
+    <div class="video-hero-inner">
+      <span class="section-label">VIDEO GALLERY</span>
+      <h1>Seyond LiDAR 영상 아카이브</h1>
+      <p>Seyond의 혁신적인 LiDAR 기술과 실제 적용 사례를 영상으로 만나보세요.<br>총 <strong>14개</strong>의 제품 데모와 기술 프레젠테이션을 제공합니다.</p>
+      <div class="featured-video" data-video-id="kkRf2MVEQvM">
+        <span class="featured-label">★ FEATURED</span>
+        <img src="https://img.youtube.com/vi/kkRf2MVEQvM/maxresdefault.jpg"
+             onerror="this.src='https://img.youtube.com/vi/kkRf2MVEQvM/hqdefault.jpg'"
+             alt="Featured Video">
+        <div class="play-overlay">
+          <div class="play-btn"></div>
         </div>
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#1a3a2a,#2d5a3d);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>Robin W — 120° 초광각 Side Detection</h3>
-            <p>120°×70° 광각 FOV로 측면 사각지대 없이 감지하는 Robin W의 성능 시연 영상입니다.</p>
-            <span style="background:rgba(78,205,196,0.1);color:var(--accent);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;font-weight:600;">Robin W</span>
-          </div>
-        </div>
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#0d2b1e,#1a4c33);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>Hummingbird HD1 — 솔리드 스테이트 140°×100° FOV</h3>
-            <p>기계 부품 없이 전자 스캐닝만으로 140°×100° 초광각 3D 인지를 실현하는 Hummingbird의 데모 영상입니다.</p>
-            <span style="background:rgba(78,205,196,0.1);color:var(--accent);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;font-weight:600;">Hummingbird HD1</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category: SIMPL Software -->
-      <div style="margin-top:4rem;margin-bottom:1rem;">
-        <span class="section-label">SIMPL SOFTWARE</span>
-        <h3 class="section-title" style="font-size:1.5rem;">소프트웨어 솔루션 영상</h3>
-      </div>
-      <div class="content-grid">
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#1a2a3a,#0d2f4a);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>SIMPL ITS — 교차로 실시간 교통 감지</h3>
-            <p>99% 차량 감지 정확도의 SIMPL ITS가 교차로에서 모든 도로 이용자를 실시간 감지·추적하는 모습입니다.</p>
-            <span style="background:rgba(78,205,196,0.1);color:var(--accent);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;font-weight:600;">SIMPL ITS</span>
-          </div>
-        </div>
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#1a3a2a,#0d4a2f);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>SIMPL ID — 3D 침입 감지 시스템</h3>
-            <p>LiDAR 기반 3D 침입 감지 시스템이 보안 구역에서 무단 침입자를 정밀 탐지하는 데모 영상입니다.</p>
-            <span style="background:rgba(78,205,196,0.1);color:var(--accent);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;font-weight:600;">SIMPL ID</span>
-          </div>
-        </div>
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#132e1f,#1f5035);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>Point Cloud Viewer — 실시간 3D 시각화</h3>
-            <p>Seyond의 Point Cloud Viewer 소프트웨어로 LiDAR 데이터를 실시간 시각화하고 분석하는 가이드 영상입니다.</p>
-            <span style="background:rgba(78,205,196,0.1);color:var(--accent);padding:0.2rem 0.5rem;border-radius:4px;font-size:0.75rem;font-weight:600;">Software</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Category: Application -->
-      <div style="margin-top:4rem;margin-bottom:1rem;">
-        <span class="section-label">APPLICATIONS</span>
-        <h3 class="section-title" style="font-size:1.5rem;">적용 사례 영상</h3>
-      </div>
-      <div class="content-grid">
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#0a2418,#16422c);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>고속도로 ITS — 돌발 상황 감지</h3>
-            <p>고속도로 구간에서 사고, 역주행, 정지 차량을 실시간 감지하는 시스템 시연 영상입니다.</p>
-          </div>
-        </div>
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#0e2c1d,#1b5038);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>항만 자동화 — 컨테이너 인식</h3>
-            <p>항만 환경에서 컨테이너 위치 인식 및 무인 운반 차량 가이드 시스템 데모 영상입니다.</p>
-          </div>
-        </div>
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#132e1f,#264d35);color:var(--accent);font-size:3rem;display:flex;align-items:center;justify-content:center;">▶</div>
-          <div class="content-card-body">
-            <h3>CES 2026 — Seyond Full Portfolio 데모</h3>
-            <p>CES 2026에서 선보인 Hummingbird D1, RoboVan, 전체 LiDAR 포트폴리오 라이브 데모 하이라이트 영상입니다.</p>
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align:center;margin-top:3rem;" class="fade-in">
-        <p style="color:var(--text-light);margin-bottom:1rem;">실제 영상은 관리자에 의해 업데이트됩니다. 영상 자료가 필요하시면 문의해 주세요.</p>
-        <a href="contact.html" class="btn btn-dark">영상 자료 요청 →</a>
       </div>
     </div>
   </section>
+
+  <!-- Video Grid -->
+  <section class="video-section">
+    <div class="container">
+      <div class="video-section-head">
+        <div>
+          <span class="section-label">ALL VIDEOS</span>
+          <h2>전체 영상</h2>
+        </div>
+        <div class="video-count" id="video-count"></div>
+      </div>
+
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="product">제품</button>
+        <button class="filter-btn" data-filter="tech">기술</button>
+        <button class="filter-btn" data-filter="application">적용 사례</button>
+      </div>
+
+      <div class="video-grid" id="video-grid">
+        <!-- Video cards dynamically injected -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="video-modal" id="video-modal">
+    <div class="video-modal-content">
+      <button class="video-modal-close" aria-label="닫기">✕</button>
+      <div id="video-modal-player"></div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -186,7 +445,70 @@
       </div>
     </div>
   </footer>
+
   <script src="../js/main.js"></script>
   <button class="back-to-top" aria-label="맨 위로">↑</button>
+
+  <script>
+    const VIDEOS = [
+      { id: 'kkRf2MVEQvM', category: 'product', title: 'Seyond LiDAR 제품 소개' },
+      { id: 'NQeAIBdpSY8', category: 'product', title: 'Seyond LiDAR 기술 영상' },
+      { id: '7u6n3oiyMUI', category: 'tech', title: 'Directional LiDAR 기술' },
+      { id: '8BYIHIoBgqU', category: 'application', title: 'LiDAR 적용 사례' },
+      { id: '3vU0gi-eH1A', category: 'product', title: 'Falcon LiDAR 데모' },
+      { id: 'Zic0bfpTTDY', category: 'application', title: 'ITS 교통 감지 솔루션' },
+      { id: 'm53Zem3Gnsk', category: 'tech', title: 'Point Cloud 시각화' },
+      { id: 'NgQcpfU93js', category: 'product', title: 'Robin LiDAR 시리즈' },
+      { id: 'zZJ-sfE8Lu0', category: 'application', title: '자율주행 LiDAR 적용' },
+      { id: 'SC_apUu3Z1E', category: 'tech', title: 'Directional vs Rotational' },
+      { id: 'acLGcJHxC5Q', category: 'product', title: 'Hummingbird Solid-state' },
+      { id: 'sBkTwTVo2no', category: 'application', title: '보안 분야 LiDAR 활용' },
+      { id: 'idu5XLbpvdM', category: 'tech', title: 'LiDAR 센서 기술' },
+      { id: 'k2q1l7Z98yY', category: 'application', title: 'CES 전시 영상' }
+    ];
+    const categoryLabels = { product: '제품', tech: '기술', application: '적용 사례' };
+    function renderVideos(filter = 'all') {
+      const grid = document.getElementById('video-grid');
+      const filtered = filter === 'all' ? VIDEOS : VIDEOS.filter(v => v.category === filter);
+      document.getElementById('video-count').textContent = '총 ' + filtered.length + '개 영상';
+      grid.innerHTML = filtered.map(v => '<div class="video-card" data-video-id="' + v.id + '"><div class="video-thumb"><img src="https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg" loading="lazy" alt="' + v.title + '"><div class="mini-play"></div></div><div class="video-info"><span class="video-category">' + categoryLabels[v.category] + '</span><h3 class="video-title" data-title-for="' + v.id + '">' + v.title + '</h3></div></div>').join('');
+      loadTitles(filtered);
+      grid.querySelectorAll('.video-card').forEach(card => card.addEventListener('click', () => openModal(card.dataset.videoId)));
+    }
+    async function loadTitles(videos) {
+      for (const v of videos) {
+        try {
+          const res = await fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + v.id + '&format=json');
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (data.title) document.querySelectorAll('[data-title-for="' + v.id + '"]').forEach(el => el.textContent = data.title);
+        } catch (e) {}
+      }
+    }
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderVideos(btn.dataset.filter);
+      });
+    });
+    const modal = document.getElementById('video-modal');
+    const player = document.getElementById('video-modal-player');
+    function openModal(videoId) {
+      player.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      player.innerHTML = '';
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.querySelector('.video-modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+    document.querySelector('.featured-video').addEventListener('click', function() { openModal(this.dataset.videoId); });
+    renderVideos();
+  </script>
 </body>
 </html>
