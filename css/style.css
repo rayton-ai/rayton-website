@@ -1,5 +1,7 @@
 /* ===== RAYTON Sensor Solutions - Global Styles ===== */
 
+/* Font note: Pretendard Variable is loaded via <link> in each HTML file for performance. */
+
 /* Reset & Base */
 *, *::before, *::after {
   margin: 0;
@@ -9,7 +11,7 @@
 
 :root {
   --primary: #0a2e1a;
-  --primary-light: #1a5c3
+  --primary-light: #1a5c3a;
   --accent: #4ecdc4;
   --accent-hover: #3dbdb5;
   --text: #2d3436;
@@ -23,8 +25,9 @@
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
   --radius: 12px;
   --transition: all 0.3s ease;
-  --font-main: 'Inter', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Inter', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-main: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', sans-serif;
+  --font-heading: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', sans-serif;
+  --font-feature: "ss06", "ss10";
   --max-width: 1200px;
 }
 
@@ -39,6 +42,9 @@ body {
   background: var(--bg);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -56,7 +62,8 @@ img {
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
 }
 
 h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
@@ -369,8 +376,6 @@ section {
   box-shadow: var(--shadow);
   transition: var(--transition);
   border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
 }
 
 .product-card:hover {
@@ -384,7 +389,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 220px;
+  min-height: 220px;
   overflow: hidden;
 }
 
@@ -396,39 +401,32 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  min-height: 220px;
 }
 
 /* Hummingbird teal circle decoration */
-  .product-card-img.hb-circle,
-  .overview-card-img.hb-circle {
-    position: relative;
-    overflow: hidden;
-    max-height: 220px;
-  }
+.product-card-img.hb-circle {
+  position: relative;
+  overflow: hidden;
+}
 
-  .product-card-img.hb-circle .teal-circle,
-  .overview-card-img.hb-circle .teal-circle {
-    position: absolute;
-    width: 113px;
-    height: 113px;
-    border-radius: 50%;
-    background: rgba(67, 150, 156, 0.66);
-    bottom: 6%;
-    right: -15%;
-    left: auto;
-    z-index: 0;
-    pointer-events: none;
-  }
+.product-card-img.hb-circle::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: rgba(78, 205, 196, 0.35);
+  bottom: 10%;
+  right: 10%;
+  z-index: 0;
+}
 
-  .product-card-img.hb-circle img,
-  .overview-card-img.hb-circle img {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: contain !important;
-    padding: 1.5rem;
-  }
+.product-card-img.hb-circle img {
+  position: relative;
+  z-index: 1;
+  object-fit: contain !important;
+}
 
 .product-card-img .product-icon {
   width: 160px;
@@ -446,9 +444,6 @@ section {
 
 .product-card-body {
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
 }
 
 .product-card-body h3 {
@@ -477,7 +472,6 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: auto;
 }
 
 .product-link:hover {

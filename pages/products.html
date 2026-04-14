@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>제품소개 – RAYTON Sensor Solutions</title>
-  <meta name="description" content="Seyond LiDAR 제품 소개 - Falcon K, Robin W, Robin E1X, Hummingbird Automotive, HD1-R. 초장거리 고해상도 Solid-state LiDAR.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Seyond LiDAR 제품 소개 - Falcon K, Robin W, Robin E1X, Hummingbird HD1, HD1-R. 초장거리 고해상도 Solid-state LiDAR.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <style>
     /* Product Overview Cards */
@@ -138,15 +138,7 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 20px rgba(10,46,26,0.3);
     }
-  
-    .product-detail img {
-      max-height: 400px;
-      object-fit: contain;
-      width: auto;
-      margin: 0 auto;
-      display: block;
-    }
-    </style>
+  </style>
 </head>
 <body>
 
@@ -219,21 +211,19 @@
         </div>
         <div class="overview-card" data-target="hummingbird-auto">
           <div class="overview-card-img hb-circle">
-            <div class="teal-circle"></div>
-            <img src="../images/Hummingbird_Automotive.png" alt="Hummingbird Automotive">
+            <img src="../images/Hummingbird_Automotive.png" alt="Hummingbird HD1" style="object-fit:contain;padding:1.5rem;">
           </div>
           <div class="overview-card-body">
-            <h3>Hummingbird Automotive</h3>
+            <h3>Hummingbird HD1</h3>
             <span>Automotive</span>
           </div>
         </div>
         <div class="overview-card" data-target="hummingbird-robot">
           <div class="overview-card-img hb-circle">
-            <div class="teal-circle"></div>
-            <img src="../images/Hummingbird_Robotics.png" alt="Hummingbird-Robotics">
+            <img src="../images/Hummingbird_Robotics.png" alt="Hummingbird HD1-R" style="object-fit:contain;padding:1.5rem;">
           </div>
           <div class="overview-card-body">
-            <h3>Hummingbird-Robotics</h3>
+            <h3>Hummingbird HD1-R</h3>
             <span>Robotics</span>
           </div>
         </div>
@@ -320,16 +310,16 @@
         </div>
       </div>
 
-      <!-- Hummingbird Automotive - Automotive -->
+      <!-- Hummingbird HD1 - Automotive -->
       <div id="hummingbird-auto" class="product-detail" style="display:none;">
         <div class="about-grid">
           <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="../images/Hummingbird_Automotive.png" alt="Hummingbird Automotive Automotive" style="max-width:100%;height:auto;border-radius:16px;">
+            <img src="../images/Hummingbird_Automotive.png" alt="Hummingbird HD1 Automotive" style="max-width:100%;height:auto;border-radius:16px;">
           </div>
           <div>
-            <h2 style="color:var(--primary);margin-bottom:0.5rem;">HUMMINGBIRD AUTOMOTIVE</h2>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">HUMMINGBIRD HD1</h2>
             <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Automotive Fully Solid-state LiDAR<br>#Ultra-wide FOV #Automotive Grade</p>
-            <p style="margin-bottom:1rem;">Hummingbird Automotive은 자동차 OEM을 위한 완전 솔리드 스테이트 LiDAR입니다. 혁신적인 전자 스캐닝 설계로 기계적 부품 없이 뛰어난 내구성과 신뢰성을 보장하며, -40°C~85°C 광범위 동작 온도를 지원합니다.</p>
+            <p style="margin-bottom:1rem;">Hummingbird HD1은 자동차 OEM을 위한 완전 솔리드 스테이트 LiDAR입니다. 혁신적인 전자 스캐닝 설계로 기계적 부품 없이 뛰어난 내구성과 신뢰성을 보장하며, -40°C~85°C 광범위 동작 온도를 지원합니다.</p>
             <p style="margin-bottom:2rem;">140°×100° 초광각 시야각과 0.55°×0.52° 고해상도로 도킹, 주차 보조, 보행자 감지 등 고밀도 환경에서의 근거리 정밀 3D 인지를 실현합니다.</p>
             <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
               <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위</td><td style="padding:0.75rem 0;color:var(--text-light);">0.1m ~ 50m</td></tr>
@@ -347,23 +337,23 @@
               <tr><td style="padding:0.75rem 0;font-weight:600;">소비 전력</td><td style="padding:0.75rem 0;color:var(--text-light);">≤ 8W</td></tr>
             </table>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-              <button class="btn-quote" onclick="openQuote('Hummingbird Automotive')">견적 받기</button>
+              <button class="btn-quote" onclick="openQuote('Hummingbird HD1')">견적 받기</button>
               <a href="#" class="btn btn-outline" style="color:var(--text);border-color:var(--border);">Datasheet & Manual</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Hummingbird-Robotics - Robotics -->
+      <!-- Hummingbird HD1-R - Robotics -->
       <div id="hummingbird-robot" class="product-detail" style="display:none;">
         <div class="about-grid">
           <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="../images/Hummingbird_Robotics.png" alt="Hummingbird-Robotics Robotics" style="max-width:100%;height:auto;border-radius:16px;">
+            <img src="../images/Hummingbird_Robotics.png" alt="Hummingbird HD1-R Robotics" style="max-width:100%;height:auto;border-radius:16px;">
           </div>
           <div>
-            <h2 style="color:var(--primary);margin-bottom:0.5rem;">HUMMINGBIRD-ROBOTICS</h2>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">HUMMINGBIRD HD1-R</h2>
             <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Robotics Fully Solid-state LiDAR<br>#Compact #AMR #AGV</p>
-            <p style="margin-bottom:1rem;">Hummingbird-Robotics은 로봇(AMR/AGV) 전용으로 설계된 완전 솔리드 스테이트 LiDAR입니다. 37×92×45mm의 초소형 폼팩터로 다양한 로봇 플랫폼에 유연하게 통합 가능합니다.</p>
+            <p style="margin-bottom:1rem;">Hummingbird HD1-R은 로봇(AMR/AGV) 전용으로 설계된 완전 솔리드 스테이트 LiDAR입니다. 37×92×45mm의 초소형 폼팩터로 다양한 로봇 플랫폼에 유연하게 통합 가능합니다.</p>
             <p style="margin-bottom:2rem;">Automotive 버전과 동일한 140°×100° 초광각 시야각 및 192CH를 제공하면서도 더 작은 크기와 낮은 소비 전력(≤6W)으로 배터리 구동 로봇에 최적화되었습니다.</p>
             <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
               <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위</td><td style="padding:0.75rem 0;color:var(--text-light);">0.1m ~ 50m</td></tr>
@@ -381,7 +371,7 @@
               <tr><td style="padding:0.75rem 0;font-weight:600;">소비 전력</td><td style="padding:0.75rem 0;color:var(--text-light);">≤ 6W</td></tr>
             </table>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-              <button class="btn-quote" onclick="openQuote('Hummingbird-Robotics')">견적 받기</button>
+              <button class="btn-quote" onclick="openQuote('Hummingbird HD1-R')">견적 받기</button>
               <a href="#" class="btn btn-outline" style="color:var(--text);border-color:var(--border);">Datasheet & Manual</a>
             </div>
           </div>
@@ -444,8 +434,8 @@
             <li><a href="products.html">Falcon K</a></li>
             <li><a href="products.html">Robin W</a></li>
             <li><a href="products.html">Robin E1X</a></li>
-            <li><a href="products.html">Hummingbird Automotive</a></li>
-            <li><a href="products.html">Hummingbird-Robotics</a></li>
+            <li><a href="products.html">Hummingbird HD1</a></li>
+            <li><a href="products.html">Hummingbird HD1-R</a></li>
           </ul>
         </div>
         <div>

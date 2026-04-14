@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Video – RAYTON Sensor Solutions</title>
   <meta name="description" content="Seyond LiDAR 제품 영상 및 데모 비디오 갤러리.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <style>
     /* ====== Video Gallery Styles ====== */
@@ -450,6 +450,8 @@
   <button class="back-to-top" aria-label="맨 위로">↑</button>
 
   <script>
+    // ====== Video Data ======
+    // Videos extracted from the existing rayton.ai/media page
     const VIDEOS = [
       { id: 'kkRf2MVEQvM', category: 'product', title: 'Seyond LiDAR 제품 소개' },
       { id: 'NQeAIBdpSY8', category: 'product', title: 'Seyond LiDAR 기술 영상' },
@@ -466,25 +468,54 @@
       { id: 'idu5XLbpvdM', category: 'tech', title: 'LiDAR 센서 기술' },
       { id: 'k2q1l7Z98yY', category: 'application', title: 'CES 전시 영상' }
     ];
-    const categoryLabels = { product: '제품', tech: '기술', application: '적용 사례' };
+
+    const categoryLabels = {
+      product: '제품',
+      tech: '기술',
+      application: '적용 사례'
+    };
+
+    // ====== Render Grid ======
     function renderVideos(filter = 'all') {
       const grid = document.getElementById('video-grid');
       const filtered = filter === 'all' ? VIDEOS : VIDEOS.filter(v => v.category === filter);
-      document.getElementById('video-count').textContent = '총 ' + filtered.length + '개 영상';
-      grid.innerHTML = filtered.map(v => '<div class="video-card" data-video-id="' + v.id + '"><div class="video-thumb"><img src="https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg" loading="lazy" alt="' + v.title + '"><div class="mini-play"></div></div><div class="video-info"><span class="video-category">' + categoryLabels[v.category] + '</span><h3 class="video-title" data-title-for="' + v.id + '">' + v.title + '</h3></div></div>').join('');
+      document.getElementById('video-count').textContent = `총 ${filtered.length}개 영상`;
+      grid.innerHTML = filtered.map(v => `
+        <div class="video-card" data-video-id="${v.id}">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg"
+                 loading="lazy" alt="${v.title}">
+            <div class="mini-play"></div>
+          </div>
+          <div class="video-info">
+            <span class="video-category">${categoryLabels[v.category]}</span>
+            <h3 class="video-title" data-title-for="${v.id}">${v.title}</h3>
+          </div>
+        </div>
+      `).join('');
+      // Load actual titles from YouTube oEmbed (client-side)
       loadTitles(filtered);
-      grid.querySelectorAll('.video-card').forEach(card => card.addEventListener('click', () => openModal(card.dataset.videoId)));
+      // Bind clicks
+      grid.querySelectorAll('.video-card').forEach(card => {
+        card.addEventListener('click', () => openModal(card.dataset.videoId));
+      });
     }
+
+    // ====== Load Real YouTube Titles via oEmbed ======
     async function loadTitles(videos) {
       for (const v of videos) {
         try {
-          const res = await fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + v.id + '&format=json');
+          const res = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${v.id}&format=json`);
           if (!res.ok) continue;
           const data = await res.json();
-          if (data.title) document.querySelectorAll('[data-title-for="' + v.id + '"]').forEach(el => el.textContent = data.title);
-        } catch (e) {}
+          if (data.title) {
+            document.querySelectorAll(`[data-title-for="${v.id}"]`).forEach(el => el.textContent = data.title);
+          }
+        } catch (e) { /* silent fail — keep fallback title */ }
       }
     }
+
+    // ====== Filter Logic ======
     document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -492,10 +523,12 @@
         renderVideos(btn.dataset.filter);
       });
     });
+
+    // ====== Modal ======
     const modal = document.getElementById('video-modal');
     const player = document.getElementById('video-modal-player');
     function openModal(videoId) {
-      player.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -507,7 +540,13 @@
     document.querySelector('.video-modal-close').addEventListener('click', closeModal);
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
-    document.querySelector('.featured-video').addEventListener('click', function() { openModal(this.dataset.videoId); });
+
+    // Featured video click
+    document.querySelector('.featured-video').addEventListener('click', function() {
+      openModal(this.dataset.videoId);
+    });
+
+    // Init
     renderVideos();
   </script>
 </body>

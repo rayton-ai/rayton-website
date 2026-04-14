@@ -3,12 +3,426 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer – RAYTON Sensor Solutions</title>
-  <meta name="description" content="Seyond LiDAR 개발자 리소스 - SDK, API, 기술문서, 데이터시트 다운로드.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Downloads – RAYTON Sensor Solutions</title>
+  <meta name="description" content="RAYTON / Seyond LiDAR 다운로드 센터 - Datasheet, Manual, SDK, Sample Data 등 개발에 필요한 모든 자료를 제공합니다.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ====== Downloads Page ====== */
+    .dl-hero {
+      background: linear-gradient(135deg, #0a1a0f 0%, #132e1f 50%, #1a4c33 100%);
+      color: #fff;
+      padding: 5rem 0 4rem;
+      margin-top: -4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .dl-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(67,150,156,0.25), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(78,205,196,0.18), transparent 55%);
+      pointer-events: none;
+    }
+    .dl-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 0;
+      text-align: center;
+    }
+    .dl-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    .dl-hero p {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Search & filter bar */
+    .dl-toolbar {
+      max-width: 1200px;
+      margin: -2rem auto 0;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    .dl-search-box {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .dl-search-box svg {
+      flex-shrink: 0;
+      color: #94a3b8;
+    }
+    .dl-search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #0f172a;
+      background: transparent;
+    }
+    .dl-search-input::placeholder {
+      color: #94a3b8;
+    }
+
+    /* Category tabs */
+    .dl-tabs {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .dl-tab {
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      border: 1px solid #e2e8f0;
+      background: #fff;
+      color: #475569;
+      font-weight: 500;
+      font-family: inherit;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .dl-tab:hover {
+      border-color: #1a4c33;
+      color: #1a4c33;
+    }
+    .dl-tab.active {
+      background: #1a4c33;
+      border-color: #1a4c33;
+      color: #fff;
+    }
+    .dl-tab .count {
+      opacity: 0.7;
+      font-size: 0.85em;
+      margin-left: 0.4em;
+    }
+
+    /* Grid */
+    .dl-grid {
+      max-width: 1200px;
+      margin: 2.5rem auto 4rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .dl-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .dl-card:hover {
+      border-color: #1a4c33;
+      box-shadow: 0 8px 30px rgba(26,76,51,0.12);
+      transform: translateY(-2px);
+    }
+    .dl-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .dl-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1a4c33 0%, #2d7a52 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .dl-badge {
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #475569;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .dl-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.75rem;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+    .dl-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+    .dl-card-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: #0f172a;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      width: 100%;
+    }
+    .dl-btn:hover {
+      background: #1a4c33;
+    }
+    .dl-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .dl-empty {
+      grid-column: 1 / -1;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #94a3b8;
+    }
+    .dl-empty h3 {
+      color: #475569;
+      margin: 0 0 0.5rem;
+    }
+
+    /* ====== Modal (Lead capture form) ====== */
+    .dl-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,23,42,0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      animation: fadeIn 0.2s ease;
+    }
+    .dl-modal.open {
+      display: flex;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .dl-modal-card {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .dl-modal-head {
+      padding: 1.75rem 2rem 1rem;
+      border-bottom: 1px solid #f1f5f9;
+      position: relative;
+    }
+    .dl-modal-head h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.4rem;
+    }
+    .dl-modal-head p {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .dl-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: #f1f5f9;
+      color: #475569;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.15s;
+    }
+    .dl-modal-close:hover {
+      background: #e2e8f0;
+    }
+    .dl-form {
+      padding: 1.5rem 2rem 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+    .dl-field {
+      display: grid;
+      gap: 0.4rem;
+    }
+    .dl-field label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .dl-field label .req {
+      color: #dc2626;
+    }
+    .dl-field input,
+    .dl-field select,
+    .dl-field textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #0f172a;
+      background: #fff;
+      outline: none;
+      transition: all 0.15s;
+    }
+    .dl-field input:focus,
+    .dl-field select:focus,
+    .dl-field textarea:focus {
+      border-color: #1a4c33;
+      box-shadow: 0 0 0 3px rgba(26,76,51,0.1);
+    }
+    .dl-field textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+    .dl-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 520px) {
+      .dl-form-row { grid-template-columns: 1fr; }
+    }
+    .dl-submit {
+      margin-top: 0.5rem;
+      padding: 0.9rem 1.5rem;
+      background: #1a4c33;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .dl-submit:hover {
+      background: #0f3622;
+    }
+    .dl-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .dl-consent {
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.5;
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .dl-consent input {
+      margin-top: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Thank you screen */
+    .dl-thanks {
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+    }
+    .dl-thanks-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.25rem;
+      border-radius: 50%;
+      background: #dcfce7;
+      color: #16a34a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .dl-thanks h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.5rem;
+    }
+    .dl-thanks p {
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0 0 1.5rem;
+      font-size: 0.95rem;
+    }
+    .dl-thanks-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      background: #1a4c33;
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
@@ -34,86 +448,94 @@
     </div>
   </nav>
 
-  <div class="page-header">
-    <span class="section-label">DEVELOPER</span>
-    <h1>개발자 리소스</h1>
+  <section class="dl-hero">
+    <div class="dl-hero-inner">
+      <h1>Downloads</h1>
+      <p>RAYTON이 제공하는 Seyond LiDAR Datasheet, Manual, SDK, Sample Data를 한 곳에서 받아보세요.</p>
+    </div>
+  </section>
+
+  <div class="dl-toolbar">
+    <div class="dl-search-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" id="dlSearch" class="dl-search-input" placeholder="제품명, 문서명으로 검색 (예: Falcon K, SDK, Manual)">
+    </div>
   </div>
 
-  <section>
-    <div class="container">
-      <div style="text-align:center;" class="fade-in">
-        <h2 class="section-title">개발에 필요한 모든 자료</h2>
-        <p class="section-desc">Seyond LiDAR를 활용한 개발에 필요한 SDK, API 문서, 기술 자료를 제공합니다.</p>
-      </div>
+  <div class="dl-tabs" id="dlTabs">
+    <button class="dl-tab active" data-cat="all">전체 <span class="count"></span></button>
+    <button class="dl-tab" data-cat="datasheet">Datasheet <span class="count"></span></button>
+    <button class="dl-tab" data-cat="manual">User Manual <span class="count"></span></button>
+    <button class="dl-tab" data-cat="sdk">SDK / Firmware <span class="count"></span></button>
+    <button class="dl-tab" data-cat="sample">Sample Data <span class="count"></span></button>
+  </div>
 
-      <div class="dev-resources">
-        <div class="dev-card fade-in">
-          <div class="dev-icon">📄</div>
-          <h3>Datasheet</h3>
-          <p>Falcon K, Robin W, Robin E1X, Hummingbird HD1/HD1-R 각 제품의 상세 사양 및 성능 데이터를 확인하실 수 있습니다.</p>
-          <a href="contact.html" class="product-link" style="margin-top:1rem;display:inline-flex;">다운로드 요청 →</a>
+  <div class="dl-grid" id="dlGrid">
+    <!-- Cards rendered by JS -->
+  </div>
+
+  <!-- Lead capture modal -->
+  <div class="dl-modal" id="dlModal" role="dialog" aria-modal="true">
+    <div class="dl-modal-card">
+      <div id="dlModalBody">
+        <div class="dl-modal-head">
+          <h3 id="dlModalTitle">다운로드 요청</h3>
+          <p id="dlModalDesc">간단한 정보 입력 후 바로 다운로드가 시작됩니다.</p>
+          <button class="dl-modal-close" id="dlModalClose" aria-label="닫기">&times;</button>
         </div>
 
-        <div class="dev-card fade-in">
-          <div class="dev-icon">📘</div>
-          <h3>User Manual</h3>
-          <p>설치 가이드, 설정 방법, 운용 매뉴얼 등 제품 사용에 필요한 기술 문서를 제공합니다. 기계식 LiDAR부터 솔리드 스테이트까지 모든 제품군 포함.</p>
-          <a href="contact.html" class="product-link" style="margin-top:1rem;display:inline-flex;">다운로드 요청 →</a>
-        </div>
+        <form class="dl-form" id="dlForm" name="download-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/developer-thanks.html">
+          <input type="hidden" name="form-name" value="download-request">
+          <input type="hidden" name="file-title" id="dlFormTitle">
+          <input type="hidden" name="file-url" id="dlFormUrl">
+          <input type="hidden" name="file-category" id="dlFormCat">
+          <p style="display:none"><label>Don't fill this: <input name="bot-field"></label></p>
 
-        <div class="dev-card fade-in">
-          <div class="dev-icon">💻</div>
-          <h3>SDK & API</h3>
-          <p>LiDAR 데이터 처리 및 통합을 위한 SDK와 API 문서, 샘플 코드를 제공합니다. C++/Python 지원, 포인트 클라우드 스트리밍 API 포함.</p>
-          <a href="contact.html" class="product-link" style="margin-top:1rem;display:inline-flex;">문의하기 →</a>
-        </div>
-
-        <div class="dev-card fade-in">
-          <div class="dev-icon">🔧</div>
-          <h3>Point Cloud Viewer</h3>
-          <p>Seyond LiDAR의 3D Point Cloud 데이터를 실시간으로 시각화하고 녹화할 수 있는 뷰어 소프트웨어입니다.</p>
-          <a href="contact.html" class="product-link" style="margin-top:1rem;display:inline-flex;">다운로드 요청 →</a>
-        </div>
-
-        <div class="dev-card fade-in">
-          <div class="dev-icon">🧩</div>
-          <h3>ROS / ROS2 Integration</h3>
-          <p>ROS/ROS2 환경에서의 LiDAR 통합을 위한 드라이버 패키지 및 설정 가이드를 제공합니다. Hummingbird HD1-R 로봇 플랫폼 연동 지원.</p>
-          <a href="contact.html" class="product-link" style="margin-top:1rem;display:inline-flex;">문의하기 →</a>
-        </div>
-
-        <div class="dev-card fade-in">
-          <div class="dev-icon">&#x1F6E1;</div>
-          <h3>SIMPL Software</h3>
-          <p>SIMPL ID(침입 감지) / ITS(교통 관제) 소프트웨어 연동 가이드 및 API 문서를 제공합니다.</p>
-          <a href="software.html" class="product-link" style="margin-top:1rem;display:inline-flex;">소프트웨어 보기 →</a>
-        </div>
-
-        <div class="dev-card fade-in">
-          <div class="dev-icon">📡</div>
-          <h3>PCAP / PCD 데이터</h3>
-          <p>평가 및 개발 목적의 샘플 PCAP 데이터, PCD 파일 등 각 제품별 레퍼런스 포인트 클라우드 데이터를 제공합니다.</p>
-          <a href="contact.html" class="product-link" style="margin-top:1rem;display:inline-flex;">데이터 요청 →</a>
-        </div>
-
-        <div class="dev-card fade-in">
-          <div class="dev-icon">🎓</div>
-          <h3>기술 지원</h3>
-          <p>프로젝트 진행 중 기술적 문제에 대해 RAYTON 전문 엔지니어의 직접 지원을 받으실 수 있습니다. 원격/방문 지원 가능.</p>
-          <a href="contact.html" class="product-link" style="margin-top:1rem;display:inline-flex;">지원 요청 →</a>
-        </div>
+          <div class="dl-field">
+            <label>이름 <span class="req">*</span></label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="dl-form-row">
+            <div class="dl-field">
+              <label>이메일 <span class="req">*</span></label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="dl-field">
+              <label>회사명 <span class="req">*</span></label>
+              <input type="text" name="company" required>
+            </div>
+          </div>
+          <div class="dl-field">
+            <label>직책</label>
+            <input type="text" name="role" placeholder="예: R&D 엔지니어, 구매팀">
+          </div>
+          <div class="dl-field">
+            <label>활용 분야</label>
+            <select name="use_case">
+              <option value="">선택하세요</option>
+              <option value="autonomous">자율주행 / ADAS</option>
+              <option value="its">교통 / ITS</option>
+              <option value="security">보안 / 감시</option>
+              <option value="robotics">로봇 / 물류</option>
+              <option value="smart-city">스마트시티 / V2X</option>
+              <option value="industrial">산업 자동화</option>
+              <option value="research">연구 / 학술</option>
+              <option value="other">기타</option>
+            </select>
+          </div>
+          <div class="dl-field">
+            <label>추가 문의사항 (선택)</label>
+            <textarea name="message" placeholder="프로젝트 내용이나 문의사항이 있다면 자유롭게 작성해주세요"></textarea>
+          </div>
+          <label class="dl-consent">
+            <input type="checkbox" name="consent" required>
+            <span>개인정보 수집·이용에 동의합니다. 입력하신 정보는 자료 제공 및 영업 지원 목적으로만 사용되며, 제3자에게 제공되지 않습니다.</span>
+          </label>
+          <button type="submit" class="dl-submit">자료 다운로드</button>
+        </form>
       </div>
     </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="container fade-in">
-      <h2>기술 자료가 필요하신가요?</h2>
-      <p>Datasheet, Manual 등 개발에 필요한 자료는 문의를 통해 제공해 드립니다.</p>
-      <a href="contact.html" class="btn btn-primary">자료 요청 →</a>
-    </div>
-  </section>
+  </div>
 
   <footer class="footer">
     <div class="container">
@@ -155,7 +577,139 @@
       </div>
     </div>
   </footer>
+
   <script src="../js/main.js"></script>
+
+  <script>
+    const CATEGORY_ICONS = {
+      datasheet: '\uD83D\uDCC4',
+      manual:    '\uD83D\uDCD8',
+      sdk:       '\uD83D\uDCBB',
+      sample:    '\uD83D\uDCE1',
+      other:     '\uD83D\uDCC1'
+    };
+    const CATEGORY_LABELS = {
+      datasheet: 'Datasheet',
+      manual:    'Manual',
+      sdk:       'SDK / Firmware',
+      sample:    'Sample Data',
+      other:     'Document'
+    };
+
+    let downloads = [];
+    let currentCat = 'all';
+    let currentQuery = '';
+
+    async function loadDownloads() {
+      try {
+        const res = await fetch('../_data/downloads.json?v=' + Date.now());
+        if (!res.ok) throw new Error('404');
+        const data = await res.json();
+        downloads = (data.items || data || []).filter(d => d && d.title);
+      } catch (e) {
+        downloads = [];
+      }
+      render();
+    }
+
+    function render() {
+      const grid = document.getElementById('dlGrid');
+      const q = currentQuery.trim().toLowerCase();
+
+      // Update counts per tab
+      document.querySelectorAll('.dl-tab').forEach(tab => {
+        const cat = tab.dataset.cat;
+        const count = cat === 'all'
+          ? downloads.length
+          : downloads.filter(d => d.category === cat).length;
+        tab.querySelector('.count').textContent = count ? '(' + count + ')' : '';
+      });
+
+      const filtered = downloads.filter(d => {
+        const catOk = currentCat === 'all' || d.category === currentCat;
+        if (!catOk) return false;
+        if (!q) return true;
+        const blob = (d.title + ' ' + (d.description || '') + ' ' + (d.product || '')).toLowerCase();
+        return blob.includes(q);
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="dl-empty"><h3>검색 결과가 없습니다</h3><p>다른 키워드로 검색해보세요.</p></div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(d => {
+        const icon = CATEGORY_ICONS[d.category] || CATEGORY_ICONS.other;
+        const label = CATEGORY_LABELS[d.category] || CATEGORY_LABELS.other;
+        const version = d.version ? '<span>📌 v' + escapeHtml(d.version) + '</span>' : '';
+        const size = d.size ? '<span>💾 ' + escapeHtml(d.size) + '</span>' : '';
+        const date = d.date ? '<span>📅 ' + escapeHtml(d.date) + '</span>' : '';
+        const product = d.product ? '<span>🔧 ' + escapeHtml(d.product) + '</span>' : '';
+        return `
+          <div class="dl-card" data-title="${escapeHtml(d.title)}" data-url="${escapeHtml(d.file || '')}" data-cat="${escapeHtml(d.category || '')}">
+            <div class="dl-card-head">
+              <div class="dl-icon">${icon}</div>
+              <span class="dl-badge">${label}</span>
+            </div>
+            <h3>${escapeHtml(d.title)}</h3>
+            <div class="dl-card-meta">${product}${version}${size}${date}</div>
+            <button class="dl-btn" onclick="openModal(this)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              다운로드
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    // Tab filter
+    document.getElementById('dlTabs').addEventListener('click', e => {
+      const btn = e.target.closest('.dl-tab');
+      if (!btn) return;
+      document.querySelectorAll('.dl-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      currentCat = btn.dataset.cat;
+      render();
+    });
+
+    // Search
+    document.getElementById('dlSearch').addEventListener('input', e => {
+      currentQuery = e.target.value;
+      render();
+    });
+
+    // Modal
+    function openModal(btn) {
+      const card = btn.closest('.dl-card');
+      document.getElementById('dlFormTitle').value = card.dataset.title;
+      document.getElementById('dlFormUrl').value   = card.dataset.url;
+      document.getElementById('dlFormCat').value   = card.dataset.cat;
+      document.getElementById('dlModalTitle').textContent = card.dataset.title;
+      document.getElementById('dlModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('dlModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('dlModalClose').addEventListener('click', closeModal);
+    document.getElementById('dlModal').addEventListener('click', e => {
+      if (e.target.id === 'dlModal') closeModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Expose openModal globally
+    window.openModal = openModal;
+
+    loadDownloads();
+  </script>
+
   <button class="back-to-top" aria-label="맨 위로">↑</button>
 </body>
 </html>

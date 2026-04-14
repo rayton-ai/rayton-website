@@ -1,0 +1,84 @@
+{
+  "items": [
+    {
+      "title": "Falcon K Datasheet",
+      "category": "datasheet",
+      "product": "Falcon K",
+      "version": "2.1",
+      "date": "2025-08-12",
+      "size": "2.3 MB",
+      "file": "/static/files/sample-placeholder.pdf",
+      "published": true
+    },
+    {
+      "title": "Robin W Datasheet",
+      "category": "datasheet",
+      "product": "Robin W",
+      "version": "1.4",
+      "date": "2025-06-02",
+      "size": "1.8 MB",
+      "file": "/static/files/sample-placeholder.pdf",
+      "published": true
+    },
+    {
+      "title": "Robin E1X User Manual",
+      "category": "manual",
+      "product": "Robin E1X",
+      "version": "3.0",
+      "date": "2025-09-20",
+      "size": "5.4 MB",
+      "file": "/static/files/sample-placeholder.pdf",
+      "published": true
+    },
+    {
+      "title": "Seyond SDK (C++ / Python)",
+      "category": "sdk",
+      "product": "All Models",
+      "version": "4.2.1",
+      "date": "2025-10-15",
+      "size": "58 MB",
+      "file": "/static/files/sample-placeholder.zip",
+      "published": true
+    },
+    {
+      "title": "ROS2 Driver Package",
+      "category": "sdk",
+      "product": "Hummingbird HD1-R",
+      "version": "1.5.0",
+      "date": "2025-11-04",
+      "size": "12 MB",
+      "file": "/static/files/sample-placeholder.zip",
+      "published": true
+    },
+    {
+      "title": "Falcon K Sample PCAP",
+      "category": "sample",
+      "product": "Falcon K",
+      "version": "—",
+      "date": "2025-07-08",
+      "size": "850 MB",
+      "file": "/static/files/sample-placeholder.zip",
+      "published": true
+    },
+    {
+      "title": "SIMPL ID Integration Guide",
+      "category": "manual",
+      "product": "SIMPL ID",
+      "version": "2.0",
+      "date": "2025-05-18",
+      "size": "3.2 MB",
+      "file": "/static/files/sample-placeholder.pdf",
+      "published": true
+    },
+    {
+      "title": "Hummingbird HD1 Firmware",
+      "category": "sdk",
+      "product": "Hummingbird HD1",
+      "version": "3.4.2",
+      "date": "2025-12-01",
+      "size": "24 MB",
+      "file": "/static/files/sample-placeholder.zip",
+      "published": true
+    }
+  ]
+}
