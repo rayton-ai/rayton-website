@@ -9,6 +9,257 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ====== News Page Styles ====== */
+    .news-hero {
+      background: linear-gradient(135deg, #0a1a0f 0%, #132e1f 50%, #1a4c33 100%);
+      color: #fff;
+      padding: 5rem 0 4rem;
+      margin-top: -4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .news-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 15% 40%, rgba(67,150,156,0.22), transparent 60%),
+                  radial-gradient(circle at 85% 60%, rgba(78,205,196,0.16), transparent 60%);
+      pointer-events: none;
+    }
+    .news-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+    }
+    .news-hero .section-label { color: #4ecdc4; letter-spacing: 3px; }
+    .news-hero h1 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 1rem 0 0.75rem;
+    }
+    .news-hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.05rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .featured-news-section { padding: 4rem 0 2rem; }
+    .featured-news {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f9f7 0%, #e6f0eb 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      padding: 3rem;
+      position: relative;
+    }
+    .featured-news::before {
+      content: 'FEATURED';
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: #1a4c33;
+      color: #4ecdc4;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .featured-news-visual {
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #1a4c33 0%, #2d7a4f 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: rgba(255,255,255,0.9);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    }
+    .featured-news-content .news-cat {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+    }
+    .featured-news-content h2 {
+      font-size: 1.75rem;
+      line-height: 1.35;
+      margin: 0.75rem 0 1rem;
+      color: var(--text);
+    }
+    .featured-news-content .news-excerpt {
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .featured-news-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .featured-news-meta .dot {
+      width: 4px; height: 4px; background: var(--text-light); border-radius: 50%;
+    }
+
+    .news-filter {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding: 0.5rem;
+      background: #f5f7f6;
+      border-radius: 50px;
+      width: fit-content;
+      margin: 0 auto 2.5rem;
+    }
+    .news-filter-btn {
+      padding: 0.6rem 1.3rem;
+      border: none;
+      background: transparent;
+      color: var(--text-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.25s;
+      font-family: inherit;
+    }
+    .news-filter-btn:hover { color: var(--text); }
+    .news-filter-btn.active {
+      background: #1a4c33;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(26,76,51,0.25);
+    }
+
+    .news-section { padding: 2rem 0 5rem; }
+    .news-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .news-section-head h2 { font-size: 1.8rem; margin: 0.5rem 0 0; }
+    .news-section-head .section-label { color: var(--accent); font-weight: 700; }
+    .news-count { color: var(--text-light); font-size: 0.95rem; }
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+    .news-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+    .news-card-visual {
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: rgba(255,255,255,0.92);
+      position: relative;
+    }
+    .news-card-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.12));
+    }
+    .news-card-body {
+      padding: 1.5rem 1.5rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .news-badge {
+      display: inline-block;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .badge-product { background: rgba(78,205,196,0.15); color: #0f7067; }
+    .badge-partnership { background: rgba(255,152,0,0.15); color: #c97a00; }
+    .badge-award { background: rgba(255,193,7,0.18); color: #b8860b; }
+    .badge-tech { background: rgba(103,58,183,0.14); color: #5e35b1; }
+    .badge-event { background: rgba(33,150,243,0.14); color: #1565c0; }
+    .badge-company { background: rgba(76,175,80,0.14); color: #2e7d32; }
+    .news-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--text);
+      margin: 0 0 0.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-card p.excerpt {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin: 0 0 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .news-date { color: var(--text-light); font-size: 0.85rem; font-weight: 500; }
+    .news-read-more {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap 0.25s;
+    }
+    .news-card:hover .news-read-more { gap: 0.6rem; }
+
+    @media (max-width: 860px) {
+      .featured-news { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+      .featured-news-content h2 { font-size: 1.4rem; }
+      .news-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -34,97 +285,56 @@
     </div>
   </nav>
 
-  <div class="page-header">
-    <span class="section-label">NEWS</span>
-    <h1>뉴스 & 소식</h1>
-  </div>
+  <section class="news-hero">
+    <div class="news-hero-inner">
+      <span class="section-label">NEWS & INSIGHTS</span>
+      <h1>최신 뉴스 & 업계 동향</h1>
+      <p>Seyond LiDAR의 최신 혁신, 전략적 파트너십, 그리고 전 세계 자율주행·스마트 모빌리티 시장의 주요 이슈를 전해드립니다.</p>
+    </div>
+  </section>
+
+  <section class="featured-news-section">
+    <div class="container">
+      <article class="featured-news" data-category="company">
+        <div class="featured-news-visual">🚀</div>
+        <div class="featured-news-content">
+          <span class="news-cat">COMPANY · REBRANDING</span>
+          <h2>Breaking Boundaries: Innovusion Evolves into Seyond</h2>
+          <p class="news-excerpt">LiDAR 업계의 글로벌 리더 Innovusion이 Seyond로 브랜드를 새롭게 출범하며, 차세대 Directional LiDAR 기술을 기반으로 자율주행·로보틱스·스마트 인프라 시장 공략에 박차를 가합니다.</p>
+          <div class="featured-news-meta">
+            <span>📅 2025.03.20</span>
+            <span class="dot"></span>
+            <span>⏱️ 3분 읽기</span>
+          </div>
+          <a href="https://www.seyond.com/news" target="_blank" rel="noopener" class="btn btn-dark">전문 보기 →</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <section>
     <div class="container">
-      <div class="content-grid">
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#e0f2f1,#80cbc4);">🏆</div>
-          <div class="content-card-body">
-            <span class="date">2026.03</span>
-            <h3>Seyond, MODEX 2026에서 Hummingbird D1 및 Robin W 전시</h3>
-            <p>Seyond가 MODEX 2026에서 CES Innovation Award를 수상한 Hummingbird D1과 Robin W LiDAR를 전시하며 물류 자동화 시장 공략을 본격화합니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#e8f5e9,#a5d6a7);">🚗</div>
-          <div class="content-card-body">
-            <span class="date">2026.01</span>
-            <h3>Hummingbird D1, CES 2026에서 공개 — 세계 최초 OEM 양산 수주</h3>
-            <p>Seyond의 완전 솔리드 스테이트 LiDAR Hummingbird D1이 CES 2026에서 공개되었습니다. 세계 최초 OEM 양산 수주를 확보하며 승용차 대량 배포의 이정표를 세웠습니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#e3f2fd,#90caf9);">🌍</div>
-          <div class="content-card-body">
-            <span class="date">2025.08</span>
-            <h3>SIMPL, 핀란드 7개 교차로에 배치 완료</h3>
-            <p>Seyond와 Normi가 핀란드 전역 7개 교차로에 SIMPL 기반 LiDAR 교통 감지 시스템을 배치하며 유럽 시장 확대를 가속합니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#fff3e0,#ffcc80);">🤝</div>
-          <div class="content-card-body">
-            <span class="date">2025.05</span>
-            <h3>Seyond-Twincrest, 미국 남부 3개 주 SIMPL 배치 파트너십</h3>
-            <p>Seyond와 Twincrest Technologies가 텍사스, 루이지애나, 미시시피에 SIMPL ITS 플랫폼 배치를 위한 전략적 파트너십을 체결했습니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#e8eaf6,#9fa8da);">📰</div>
-          <div class="content-card-body">
-            <span class="date">2025.03</span>
-            <h3>Seyond, 글로벌 LiDAR 시장 점유율 1위 유지</h3>
-            <p>Seyond가 2024년 기준 이미지 등급 Solid-state LiDAR 부문에서 글로벌 출하량 1위를 달성했습니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#fce4ec,#f48fb1);">🤝</div>
-          <div class="content-card-body">
-            <span class="date">2025.02</span>
-            <h3>RAYTON, Seyond 한국 총판 계약 체결</h3>
-            <p>RAYTON Sensor Solutions이 Seyond의 한국 공식 총판사로서 국내 시장 공급을 본격화합니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#f3e5f5,#ce93d8);">🚀</div>
-          <div class="content-card-body">
-            <span class="date">2025.01</span>
-            <h3>Seyond, 스웨덴 $260만 교통 감지 계약 체결</h3>
-            <p>Seyond가 스웨덴 교통 당국과 260만 달러 규모의 LiDAR 기반 교통 감지 솔루션 공급 계약을 체결했습니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#fff8e1,#ffe082);">🏆</div>
-          <div class="content-card-body">
-            <span class="date">2024.12</span>
-            <h3>Seyond Robin 시리즈 대량 양산 돌입</h3>
-            <p>905nm 기반 Robin W 및 Robin E1X의 대량 양산이 시작되어 ITS 및 스마트 인프라 시장에 본격 공급됩니다.</p>
-          </div>
-        </div>
-
-        <div class="content-card fade-in">
-          <div class="content-card-img" style="background:linear-gradient(135deg,#e0f7fa,#80deea);">📡</div>
-          <div class="content-card-body">
-            <span class="date">2024.10</span>
-            <h3>SIMPL 교차로 관리 플랫폼 정식 출시</h3>
-            <p>Seyond가 LiDAR + AI 기반 교차로 관리 플랫폼 SIMPL을 정식 출시. 차량 감지 99%, 보행자 감지 92% 이상의 정확도를 달성했습니다.</p>
-          </div>
-        </div>
-
+      <div class="news-filter" id="news-filter">
+        <button class="news-filter-btn active" data-filter="all">전체</button>
+        <button class="news-filter-btn" data-filter="product">제품</button>
+        <button class="news-filter-btn" data-filter="partnership">파트너십</button>
+        <button class="news-filter-btn" data-filter="tech">기술</button>
+        <button class="news-filter-btn" data-filter="award">수상/인증</button>
+        <button class="news-filter-btn" data-filter="event">행사</button>
       </div>
+    </div>
+  </section>
+
+  <section class="news-section">
+    <div class="container">
+      <div class="news-section-head">
+        <div>
+          <span class="section-label">ALL NEWS</span>
+          <h2>전체 뉴스</h2>
+        </div>
+        <div class="news-count" id="news-count"></div>
+      </div>
+      <div class="news-grid" id="news-grid"></div>
     </div>
   </section>
 
@@ -163,12 +373,66 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Rayton Inc. All rights reserved.</span>
+        <span>© 2026 Rayton Inc. All rights reserved.</span>
         <span>Seyond LiDAR Korea</span>
       </div>
     </div>
   </footer>
+
   <script src="../js/main.js"></script>
   <button class="back-to-top" aria-label="맨 위로">↑</button>
+
+  <script>
+    const NEWS = [
+      { title: 'Seyond to Deliver High-Performance LiDAR to Avikus for Autonomous Boat Technology', excerpt: 'Seyond가 현대중공업 자율운항 자회사 Avikus에 고성능 LiDAR를 공급, 자율운항 선박 기술 상용화에 박차를 가합니다.', date: '2025.03.20', category: 'partnership', icon: '🚢', gradient: 'linear-gradient(135deg, #1976d2, #42a5f5)' },
+      { title: 'Why Directional LiDAR is the Future of Robotics', excerpt: '회전형 대비 Directional(지향성) LiDAR가 로보틱스 분야에서 왜 미래 표준이 되는지 기술적 분석과 함께 소개합니다.', date: '2025.03.20', category: 'tech', icon: '🤖', gradient: 'linear-gradient(135deg, #5e35b1, #7e57c2)' },
+      { title: 'How Directional LiDAR Advances Security Applications: Part 2', excerpt: '보안 응용 분야에서 Directional LiDAR의 실제 배치 사례, 탐지 정확도, ROI 분석을 다룹니다 (2부).', date: '2025.03.20', category: 'tech', icon: '🔐', gradient: 'linear-gradient(135deg, #455a64, #78909c)' },
+      { title: 'Level Up Your LiDAR: Switch from Rotational to Directional with Seyond!', excerpt: '기존 회전형 LiDAR에서 Seyond의 Directional LiDAR로 전환해야 하는 이유와 마이그레이션 가이드를 제시합니다.', date: '2025.03.20', category: 'product', icon: '⚡', gradient: 'linear-gradient(135deg, #0f7067, #26a69a)' },
+      { title: 'How Directional LiDAR Advances Security Applications: Part 1', excerpt: '회전형 LiDAR의 한계와 Directional LiDAR가 보안·침입 감지 분야에 가져온 혁신을 소개합니다 (1부).', date: '2025.03.20', category: 'tech', icon: '🛡️', gradient: 'linear-gradient(135deg, #37474f, #546e7a)' },
+      { title: 'Transitioning from Rotational to Directional LiDAR', excerpt: '업계가 왜 회전형에서 지향성 LiDAR로 빠르게 이동하고 있는지, 기술 발전 관점에서 종합 분석합니다.', date: '2025.03.20', category: 'tech', icon: '🔄', gradient: 'linear-gradient(135deg, #6a1b9a, #8e24aa)' },
+      { title: 'Seyond to Expand LiDAR Solutions for Autonomous Vehicles with NVIDIA DriveWorks and Omniverse Integration', excerpt: 'NVIDIA DriveWorks 및 Omniverse와의 통합을 통해 자율주행 개발 생태계를 획기적으로 확장합니다.', date: '2025.03.20', category: 'partnership', icon: '🚗', gradient: 'linear-gradient(135deg, #2e7d32, #66bb6a)' },
+      { title: 'D2 Traffic Technologies Announces Strategic Partnership with Seyond to Drive Next-Generation Traffic Solutions', excerpt: 'D2 Traffic Technologies와 Seyond가 차세대 스마트 교통 솔루션 공동 개발·공급을 위해 전략적 파트너십을 체결했습니다.', date: '2025.03.20', category: 'partnership', icon: '🚦', gradient: 'linear-gradient(135deg, #d84315, #ff7043)' },
+      { title: 'Seyond and Wideye by AGC Collaborate to Launch Built-In Behind-Windshield LiDAR Solution', excerpt: 'Seyond와 AGC의 Wideye가 윈드실드 내장형 LiDAR 솔루션을 공동 출시, 차량 디자인 혁신에 기여합니다.', date: '2025.03.20', category: 'partnership', icon: '🪟', gradient: 'linear-gradient(135deg, #00838f, #26c6da)' },
+      { title: 'Seyond Wins Tech.AD Europe Award 2023 for FALCON LiDAR', excerpt: 'Seyond의 FALCON LiDAR가 Tech.AD Europe Award 2023 인지·센싱 부문을 수상하며 기술 리더십을 입증했습니다.', date: '2025.03.20', category: 'award', icon: '🏆', gradient: 'linear-gradient(135deg, #b8860b, #ffa726)' },
+      { title: 'Seyond Officially Passed ISO 26262:2018 Automotive Functional Safety Certification', excerpt: '자동차용 기능 안전 국제 표준 ISO 26262:2018 인증을 획득, 양산급 신뢰성을 공식적으로 검증받았습니다.', date: '2025.03.20', category: 'award', icon: '✅', gradient: 'linear-gradient(135deg, #558b2f, #9ccc65)' },
+      { title: 'Seyond to Provide Live Experiences of Industry-Leading LiDAR at CES 2023', excerpt: 'CES 2023에서 업계 최고 수준의 Seyond LiDAR 실시간 데모를 선보이며 글로벌 관람객과 자동차 OEM의 주목을 받았습니다.', date: '2025.03.20', category: 'event', icon: '🎪', gradient: 'linear-gradient(135deg, #c2185b, #ec407a)' },
+      { title: 'Seyond Earlier Press: Innovusion Rebrand & Product Launches', excerpt: '과거 Innovusion 시절의 주요 언론 자료 및 제품 런칭 히스토리를 한눈에 확인하실 수 있습니다.', date: '2025.03.19', category: 'company', icon: '📰', gradient: 'linear-gradient(135deg, #3949ab, #5c6bc0)' }
+    ];
+    const categoryMap = {
+      product: { label: '제품', class: 'badge-product' },
+      partnership: { label: '파트너십', class: 'badge-partnership' },
+      tech: { label: '기술', class: 'badge-tech' },
+      award: { label: '수상/인증', class: 'badge-award' },
+      event: { label: '행사', class: 'badge-event' },
+      company: { label: '회사', class: 'badge-company' }
+    };
+    function renderNews(filter) {
+      if (!filter) filter = 'all';
+      const grid = document.getElementById('news-grid');
+      const filtered = filter === 'all' ? NEWS : NEWS.filter(n => n.category === filter);
+      document.getElementById('news-count').textContent = '총 ' + filtered.length + '개 소식';
+      grid.innerHTML = filtered.map(function(n) {
+        var cat = categoryMap[n.category];
+        var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(n.title + ' Seyond');
+        return '<a class="news-card" href="' + searchUrl + '" target="_blank" rel="noopener">' +
+          '<div class="news-card-visual" style="background:' + n.gradient + '">' + n.icon + '</div>' +
+          '<div class="news-card-body">' +
+          '<span class="news-badge ' + cat.class + '">' + cat.label + '</span>' +
+          '<h3>' + n.title + '</h3>' +
+          '<p class="excerpt">' + n.excerpt + '</p>' +
+          '<div class="news-card-footer"><span class="news-date">' + n.date + '</span>' +
+          '<span class="news-read-more">전문 보기 →</span></div>' +
+          '</div></a>';
+      }).join('');
+    }
+    document.querySelectorAll('.news-filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.news-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        renderNews(btn.dataset.filter);
+      });
+    });
+    renderNews();
+  </script>
 </body>
 </html>
