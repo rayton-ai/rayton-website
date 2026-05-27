@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media – RAYTON Sensor Solutions</title>
+  <meta name="description" content="RAYTON Sensor Solutions 뉴스 및 영상 미디어 아카이브.">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/media.css">
+  
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="../index.html" class="nav-logo">
+        <div>
+          <span class="logo-text">RAYTON</span>
+          <span class="logo-sub">Sensor Solutions</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">HOME</a></li>
+        <li><a href="products.html">LiDARs</a></li>
+        <li><a href="software.html">SOFTWARE</a></li>
+        <li><a href="applications.html">APPLICATIONS</a></li>
+        <li><a href="developer.html">DEVELOPER</a></li>
+        <li><a href="media.html" class="active">MEDIA</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="메뉴"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="media-hero">
+    <div class="media-hero-inner">
+      <span class="section-label">MEDIA</span>
+      <h1>뉴스 & 영상</h1>
+      <p>Seyond LiDAR의 최신 뉴스와 제품 영상을 한 곳에서 만나보세요.</p>
+      <div class="media-tabs" id="media-tabs">
+        <span class="tab-slider"></span>
+        <button class="media-tab-btn active" data-tab="news">📰 뉴스</button>
+        <button class="media-tab-btn" data-tab="video">▶ 영상</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS PANEL ===== -->
+  <div class="media-panel active" id="panel-news">
+
+    <section class="featured-news-section">
+      <div class="container">
+        <article class="featured-news" data-category="company">
+          <div class="featured-news-visual">🚀</div>
+          <div class="featured-news-content">
+            <span class="news-cat">COMPANY · REBRANDING</span>
+            <h2>Breaking Boundaries: Innovusion Evolves into Seyond</h2>
+            <p class="news-excerpt">LiDAR 업계의 글로벌 리더 Innovusion이 Seyond로 브랜드를 새롭게 출범하며, 차세대 Directional LiDAR 기술을 기반으로 자율주행 · 로보틱스 · 스마트 인프라 시장 공략에 박차를 가합니다.</p>
+            <div class="featured-news-meta">
+              <span>📅 2025.03.20</span>
+              <span class="dot"></span>
+              <span>⏱️ 3분 읽기</span>
+            </div>
+            <a href="https://www.seyond.com/news" target="_blank" rel="noopener" class="btn btn-dark">전문 보기 →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="news-filter" id="news-filter">
+          <span class="news-filter-slider" id="news-filter-slider"></span>
+          <button class="news-filter-btn active" data-filter="all">전체</button>
+          <button class="news-filter-btn" data-filter="product">제품</button>
+          <button class="news-filter-btn" data-filter="partnership">파트너십</button>
+          <button class="news-filter-btn" data-filter="tech">기술</button>
+          <button class="news-filter-btn" data-filter="award">수상/인증</button>
+          <button class="news-filter-btn" data-filter="event">행사</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section">
+      <div class="container">
+        <div class="news-section-head">
+          <div>
+            <span class="section-label">ALL NEWS</span>
+            <h2>전체 뉴스</h2>
+          </div>
+          <div class="news-count" id="news-count"></div>
+        </div>
+        <div class="news-grid" id="news-grid"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ===== VIDEO PANEL ===== -->
+  <div class="media-panel" id="panel-video">
+
+    <div class="media-hero-inner" style="padding-bottom: 2rem;">
+      <div class="featured-video" data-video-id="7u6n3oiyMUI" style="margin-top: 2rem;">
+        <span class="featured-label">★ FEATURED</span>
+        <img src="https://img.youtube.com/vi/7u6n3oiyMUI/maxresdefault.jpg"
+             onerror="this.src='https://img.youtube.com/vi/7u6n3oiyMUI/hqdefault.jpg'"
+             alt="Featured Video">
+        <div class="play-overlay"><div class="play-btn"></div></div>
+      </div>
+    </div>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="video-section-head">
+          <div>
+            <span class="section-label">ALL VIDEOS</span>
+            <h2>전체 영상</h2>
+          </div>
+          <div class="video-count" id="video-count"></div>
+        </div>
+        <div class="filter-tabs" id="filter-tabs">
+          <button class="filter-btn active" data-filter="all">전체</button>
+          <button class="filter-btn" data-filter="product">제품</button>
+          <button class="filter-btn" data-filter="tech">기술</button>
+          <button class="filter-btn" data-filter="application">적용 사례</button>
+        </div>
+        <div class="video-grid" id="video-grid"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="video-modal">
+    <div class="video-modal-content">
+      <button class="video-modal-close" aria-label="닫기">✕</button>
+      <div id="video-modal-player"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">RAYTON</div>
+          <span class="logo-sub">Sensor Solutions</span>
+          <p>Seyond LiDAR의 한국 총판사로서 다양한 산업군에 최적의 LiDAR 솔루션을 제공합니다.</p>
+        </div>
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="products.html">LiDARs</a></li>
+            <li><a href="software.html">SIMPL ID</a></li>
+            <li><a href="software.html">SIMPL ITS</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="developer.html">Developer</a></li>
+            <li><a href="media.html">Media</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Rayton Inc</li>
+            <li>620, Teheranro 501</li>
+            <li>Gangnam-gu, Seoul, Korea</li>
+            <li><a href="mailto:info@rayton.ai">info@rayton.ai</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Rayton Inc. All rights reserved.</span>
+        <span>Seyond LiDAR Korea</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <button class="back-to-top" aria-label="맨 위로">↑</button>
+
+  <script>
+    // ===== TAB SWITCHER =====
+    const tabsEl = document.getElementById('media-tabs');
+    document.querySelectorAll('.media-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.media-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tab = btn.dataset.tab;
+        tabsEl.classList.toggle('tab-video', tab === 'video');
+        document.querySelectorAll('.media-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-' + tab).classList.add('active');
+      });
+    });
+
+    // ===== NEWS DATA =====
+    const NEWS = [
+      { title: 'Seyond to Deliver High-Performance LiDAR to Avikus for Autonomous Boat Technology', excerpt: 'Seyond가 현대중공업 자율운항 자회사 Avikus에 고성능 LiDAR를 공급, 자율운항 선박 기술 상용화에 박차를 가합니다.', date: '2025.03.20', category: 'partnership', icon: '🚢', gradient: 'linear-gradient(135deg, #1976d2, #42a5f5)' },
+      { title: 'Why Directional LiDAR is the Future of Robotics', excerpt: '회전형 대비 Directional(지향성) LiDAR가 로보틱스 분야에서 왜 미래 표준이 되는지 기술적 분석과 함께 소개합니다.', date: '2025.03.20', category: 'tech', icon: '🤖', gradient: 'linear-gradient(135deg, #5e35b1, #7e57c2)' },
+      { title: 'How Directional LiDAR Advances Security Applications: Part 2', excerpt: '보안 응용 분야에서 Directional LiDAR의 실제 배치 사례, 탐지 정확도, ROI 분석을 다룹니다 (2부).', date: '2025.03.20', category: 'tech', icon: '🔐', gradient: 'linear-gradient(135deg, #455a64, #78909c)' },
+      { title: 'Level Up Your LiDAR: Switch from Rotational to Directional with Seyond!', excerpt: '기존 회전형 LiDAR에서 Seyond의 Directional LiDAR로 전환해야 하는 이유와 마이그레이션 가이드를 제시합니다.', date: '2025.03.20', category: 'product', icon: '⚡', gradient: 'linear-gradient(135deg, #0f7067, #26a69a)' },
+      { title: 'How Directional LiDAR Advances Security Applications: Part 1', excerpt: '회전형 LiDAR의 한계와 Directional LiDAR가 보안·침입 감지 분야에 가져온 혁신을 소개합니다 (1부).', date: '2025.03.20', category: 'tech', icon: '🛡️', gradient: 'linear-gradient(135deg, #37474f, #546e7a)' },
+      { title: 'Transitioning from Rotational to Directional LiDAR', excerpt: '업계가 왜 회전형에서 지향성 LiDAR로 빠르게 이동하고 있는지, 기술 발전 관점에서 종합 분석합니다.', date: '2025.03.20', category: 'tech', icon: '🔄', gradient: 'linear-gradient(135deg, #6a1b9a, #8e24aa)' },
+      { title: 'Seyond to Expand LiDAR Solutions for Autonomous Vehicles with NVIDIA DriveWorks and Omniverse Integration', excerpt: 'NVIDIA DriveWorks 및 Omniverse와의 통합을 통해 자율주행 개발 생태계를 획기적으로 확장합니다.', date: '2025.03.20', category: 'partnership', icon: '🚗', gradient: 'linear-gradient(135deg, #2e7d32, #66bb6a)' },
+      { title: 'D2 Traffic Technologies Announces Strategic Partnership with Seyond to Drive Next-Generation Traffic Solutions', excerpt: 'D2 Traffic Technologies와 Seyond가 차세대 스마트 교통 솔루션 공동 개발·공급을 위해 전략적 파트너십을 체결했습니다.', date: '2025.03.20', category: 'partnership', icon: '🚦', gradient: 'linear-gradient(135deg, #d84315, #ff7043)' },
+      { title: 'Seyond and Wideye by AGC Collaborate to Launch Built-In Behind-Windshield LiDAR Solution', excerpt: 'Seyond와 AGC의 Wideye가 윈드실드 내장형 LiDAR 솔루션을 공동 출시, 차량 디자인 혁신에 기여합니다.', date: '2025.03.20', category: 'partnership', icon: '🪟', gradient: 'linear-gradient(135deg, #00838f, #26c6da)' },
+      { title: 'Seyond Wins Prestigious Tech.AD Europe Award 2023 for "FALCON" LiDAR in Perception & Sensing Category', excerpt: 'Seyond의 FALCON LiDAR가 Tech.AD Europe Award 2023 인지·센싱 부문을 수상하며 기술 리더십을 다시 한번 입증했습니다.', date: '2025.03.20', category: 'award', icon: '🏆', gradient: 'linear-gradient(135deg, #b8860b, #ffa726)' },
+      { title: 'Seyond Officially Passed ISO 26262:2018 Automotive Functional Safety Certification', excerpt: '자동차용 기능 안전 국제 표준 ISO 26262:2018 인증을 획득, 양산급 신뢰성을 공식적으로 검증받았습니다.', date: '2025.03.20', category: 'award', icon: '✅', gradient: 'linear-gradient(135deg, #558b2f, #9ccc65)' },
+      { title: 'Seyond to Provide Live Experiences of Industry-Leading LiDAR for Autonomous Driving at CES 2023', excerpt: 'CES 2023에서 업계 최고 수준의 Seyond LiDAR 실시간 데모를 선보이며 글로벌 관람객과 자동차 OEM의 주목을 받았습니다.', date: '2025.03.20', category: 'event', icon: '🎪', gradient: 'linear-gradient(135deg, #c2185b, #ec407a)' },
+      { title: 'Seyond Earlier Press: Innovusion Rebrand & Product Launches', excerpt: '과거 Innovusion 시절의 주요 언론 자료 및 제품 런칭 히스토리를 한눈에 확인하실 수 있습니다.', date: '2025.03.19', category: 'company', icon: '📰', gradient: 'linear-gradient(135deg, #3949ab, #5c6bc0)' }
+    ];
+    const categoryMap = {
+      product: { label: '제품', class: 'badge-product' },
+      partnership: { label: '파트너십', class: 'badge-partnership' },
+      tech: { label: '기술', class: 'badge-tech' },
+      award: { label: '수상/인증', class: 'badge-award' },
+      event: { label: '행사', class: 'badge-event' },
+      company: { label: '회사', class: 'badge-company' }
+    };
+    function renderNews(filter = 'all') {
+      const grid = document.getElementById('news-grid');
+      const filtered = filter === 'all' ? NEWS : NEWS.filter(n => n.category === filter);
+      document.getElementById('news-count').textContent = `총 ${filtered.length}개 소식`;
+      grid.innerHTML = filtered.map(n => {
+        const cat = categoryMap[n.category];
+        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(n.title + ' Seyond')}`;
+        return `<a class="news-card" href="${searchUrl}" target="_blank" rel="noopener">
+          <div class="news-card-visual" style="background:${n.gradient}">${n.icon}</div>
+          <div class="news-card-body">
+            <span class="news-badge ${cat.class}">${cat.label}</span>
+            <h3>${n.title}</h3>
+            <p class="excerpt">${n.excerpt}</p>
+            <div class="news-card-footer">
+              <span class="news-date">${n.date}</span>
+              <span class="news-read-more">전문 보기 →</span>
+            </div>
+          </div>
+        </a>`;
+      }).join('');
+    }
+    const newsSlider = document.getElementById('news-filter-slider');
+    function moveNewsSlider(btn) {
+      newsSlider.style.left   = btn.offsetLeft + 'px';
+      newsSlider.style.top    = btn.offsetTop + 'px';
+      newsSlider.style.width  = btn.offsetWidth + 'px';
+      newsSlider.style.height = btn.offsetHeight + 'px';
+    }
+    document.querySelectorAll('.news-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.news-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        moveNewsSlider(btn);
+        renderNews(btn.dataset.filter);
+      });
+    });
+    renderNews();
+    moveNewsSlider(document.querySelector('.news-filter-btn.active'));
+
+    // ===== VIDEO DATA =====
+    const VIDEOS = [
+      { id: 'kkRf2MVEQvM', category: 'product', title: 'Seyond LiDAR 제품 소개' },
+      { id: 'NQeAIBdpSY8', category: 'product', title: 'Seyond LiDAR 기술 영상' },
+      { id: '7u6n3oiyMUI', category: 'tech', title: 'Directional LiDAR 기술' },
+      { id: '8BYIHIoBgqU', category: 'application', title: 'LiDAR 적용 사례' },
+      { id: '3vU0gi-eH1A', category: 'product', title: 'Falcon LiDAR 데모' },
+      { id: 'Zic0bfpTTDY', category: 'application', title: 'ITS 교통 감지 솔루션' },
+      { id: 'm53Zem3Gnsk', category: 'tech', title: 'Point Cloud 시각화' },
+      { id: 'NgQcpfU93js', category: 'product', title: 'Robin LiDAR 시리즈' },
+      { id: 'zZJ-sfE8Lu0', category: 'application', title: '자율주행 LiDAR 적용' },
+      { id: 'SC_apUu3Z1E', category: 'tech', title: 'Directional vs Rotational' },
+      { id: 'acLGcJHxC5Q', category: 'product', title: 'Hummingbird Solid-state' },
+      { id: 'sBkTwTVo2no', category: 'application', title: '보안 분야 LiDAR 활용' },
+      { id: 'idu5XLbpvdM', category: 'tech', title: 'LiDAR 센서 기술' },
+      { id: 'k2q1l7Z98yY', category: 'application', title: 'CES 전시 영상' }
+    ];
+    const categoryLabels = { product: '제품', tech: '기술', application: '적용 사례' };
+    function renderVideos(filter = 'all') {
+      const grid = document.getElementById('video-grid');
+      const filtered = filter === 'all' ? VIDEOS : VIDEOS.filter(v => v.category === filter);
+      document.getElementById('video-count').textContent = `총 ${filtered.length}개 영상`;
+      grid.innerHTML = filtered.map(v => `
+        <div class="video-card" data-video-id="${v.id}">
+          <div class="video-thumb">
+            <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" loading="lazy" alt="${v.title}">
+            <div class="mini-play"></div>
+          </div>
+          <div class="video-info">
+            <span class="video-category">${categoryLabels[v.category]}</span>
+            <h3 class="video-title" data-title-for="${v.id}">${v.title}</h3>
+          </div>
+        </div>
+      `).join('');
+      loadTitles(filtered);
+      grid.querySelectorAll('.video-card').forEach(card => {
+        card.addEventListener('click', () => openModal(card.dataset.videoId));
+      });
+    }
+    async function loadTitles(videos) {
+      for (const v of videos) {
+        try {
+          const res = await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${v.id}&format=json`);
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (data.title) document.querySelectorAll(`[data-title-for="${v.id}"]`).forEach(el => el.textContent = data.title);
+        } catch (e) {}
+      }
+    }
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderVideos(btn.dataset.filter);
+      });
+    });
+    renderVideos();
+
+    // Modal
+    const modal = document.getElementById('video-modal');
+    const player = document.getElementById('video-modal-player');
+    function openModal(videoId) {
+      player.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      player.innerHTML = '';
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.querySelector('.video-modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
+    document.querySelector('.featured-video').addEventListener('click', function() { openModal(this.dataset.videoId); });
+  </script>
+</body>
+</html>
