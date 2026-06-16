@@ -45,32 +45,21 @@
 
         <!-- Contact Info -->
         <div>
-          <div class="contact-info-card fade-in">
-            <h3>Rayton Inc</h3>
-
-            <div class="contact-detail">
-              <div class="icon">📍</div>
-              <div class="info">
-                <h4>주소</h4>
-                <p>620, Teheranro 501,<br>Gangnam-gu, Seoul, Korea</p>
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <div class="icon">✉️</div>
-              <div class="info">
-                <h4>E-mail</h4>
-                <p><a href="mailto:info@rayton.ai" style="color:var(--accent);">info@rayton.ai</a></p>
-              </div>
-            </div>
-
-            <div class="contact-detail">
-              <div class="icon">🌐</div>
-              <div class="info">
-                <h4>Website</h4>
-                <p><a href="https://rayton.ai" style="color:var(--accent);">rayton.ai</a></p>
-              </div>
-            </div>
+          <!-- Contact Info Boxes -->
+          <div class="fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+            <!-- Email Box -->
+            <a href="mailto:info@rayton.ai" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;background:var(--bg-light);border-radius:var(--radius);border:1px solid var(--border);text-align:center;text-decoration:none;color:inherit;transition:var(--transition);" onmouseover="this.style.boxShadow='var(--shadow)'" onmouseout="this.style.boxShadow='none'">
+              <div style="font-size:1.8rem;margin-bottom:0.5rem;">✉️</div>
+              <h4 style="margin:0 0 0.5rem;color:var(--text);">E-mail</h4>
+              <div style="font-weight:600;color:var(--accent);">info@rayton.ai</div>
+            </a>
+            
+            <!-- Phone Box -->
+            <a href="tel:02-6084-3144" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;background:var(--bg-light);border-radius:var(--radius);border:1px solid var(--border);text-align:center;text-decoration:none;color:inherit;transition:var(--transition);" onmouseover="this.style.boxShadow='var(--shadow)'" onmouseout="this.style.boxShadow='none'">
+              <div style="font-size:1.8rem;margin-bottom:0.5rem;">☎️</div>
+              <h4 style="margin:0 0 0.5rem;color:var(--text);">전화</h4>
+              <div style="font-weight:600;color:var(--accent);">02-6084-3144</div>
+            </a>
           </div>
 
           <!-- Google Maps -->
