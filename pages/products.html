@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>제품소개 – RAYTON Sensor Solutions</title>
-  <meta name="description" content="Seyond LiDAR 제품 소개 - Falcon K, Robin W, Robin E1X, Hummingbird HD1, HD1-R. 초장거리 고해상도 Solid-state LiDAR.">
+  <meta name="description" content="Seyond LiDAR 제품 소개 - Falcon K, Falcon K2 Ultra, Robin W, Robin E1X, Hummingbird HD1, HD1-R. 초장거리 고해상도 Solid-state LiDAR.">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
@@ -14,7 +14,7 @@
     .product-overview { padding: 4rem 0 2rem; background: var(--bg-light); }
     .overview-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 1.25rem;
       margin-top: 2rem;
     }
@@ -152,14 +152,12 @@
         </div>
       </a>
       <ul class="nav-links">
-        <li><a href="../index.html">HOME</a></li>
         <li><a href="products.html" class="active">LiDARs</a></li>
         <li><a href="software.html">SOFTWARE</a></li>
         <li><a href="applications.html">APPLICATIONS</a></li>
         <li><a href="developer.html">DEVELOPER</a></li>
         <li><a href="media.html">MEDIA</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
       </ul>
       <button class="nav-toggle" aria-label="메뉴">
         <span></span><span></span><span></span>
@@ -188,6 +186,15 @@
           </div>
           <div class="overview-card-body">
             <h3>Falcon K</h3>
+            <span>Ultra-long Range</span>
+          </div>
+        </div>
+        <div class="overview-card" data-target="falcon-k2-ultra">
+          <div class="overview-card-img">
+            <img src="../images/Falcon_K2_Ultra.png" alt="Falcon K2 Ultra">
+          </div>
+          <div class="overview-card-body">
+            <h3>Falcon K2 Ultra</h3>
             <span>Ultra-long Range</span>
           </div>
         </div>
@@ -255,6 +262,56 @@
             </table>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
               <button class="btn-quote" onclick="openQuote('Falcon K')">견적 받기</button>
+              <a href="#" class="btn btn-outline" style="color:var(--text);border-color:var(--border);">Datasheet & Manual</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Falcon K2 Ultra -->
+      <div id="falcon-k2-ultra" class="product-detail" style="display:none;">
+        <div class="about-grid">
+          <div style="display:flex;align-items:center;justify-content:center;">
+            <img src="../images/Falcon_K2_Ultra.png" alt="Falcon K2 Ultra LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
+          </div>
+          <div>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">FALCON K2 ULTRA</h2>
+            <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Ultra-long Range LiDAR<br>#High Resolution #900m Range</p>
+            <p style="margin-bottom:1rem;">Falcon K2 Ultra는 자체 설계 ASIC 칩 기반으로 고해상도와 초장거리 감지 능력을 동시에 구현한 플래그십 LiDAR입니다. 최대 900m의 감지 거리와 8가지 스캔 패턴 실시간 전환을 지원합니다.</p>
+            <p style="margin-bottom:2rem;">ADAS, 스마트 시티, 고속도로, 철도, 항만, 광산 등 다양한 분야에 적합하며, 자동차 등급 기준으로 설계되어 평생 신뢰성을 보장합니다.</p>
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위</td><td style="padding:0.75rem 0;color:var(--text-light);">2m~900m (500m@10%)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 (FOV)</td><td style="padding:0.75rem 0;color:var(--text-light);">120°×26°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">ROI 해상도 (H×V)</td><td style="padding:0.75rem 0;color:var(--text-light);">0.089°×0.06°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">스캐닝 라인</td><td style="padding:0.75rem 0;color:var(--text-light);">상당 152라인 (최대 216라인)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">프레임 레이트</td><td style="padding:0.75rem 0;color:var(--text-light);">10FPS (기본) / 3FPS</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">파장 / 안전 등급</td><td style="padding:0.75rem 0;color:var(--text-light);">1550nm, Class 1 (Eye-safe)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 온도</td><td style="padding:0.75rem 0;color:var(--text-light);">-40°C~85°C</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">방수방진</td><td style="padding:0.75rem 0;color:var(--text-light);">IP67 (본체), IP69K (윈도우)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">인터페이스</td><td style="padding:0.75rem 0;color:var(--text-light);">1000Base-T1 Ethernet (UDP, TCP/IP)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시간 동기화</td><td style="padding:0.75rem 0;color:var(--text-light);">NTP, PTP, gPTP</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">크기 (H×W×D)</td><td style="padding:0.75rem 0;color:var(--text-light);">60mm×228mm×150mm</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">무게</td><td style="padding:0.75rem 0;color:var(--text-light);">1.7kg</td></tr>
+              <tr><td style="padding:0.75rem 0;font-weight:600;">소비 전력</td><td style="padding:0.75rem 0;color:var(--text-light);">20W (9~24V DC)</td></tr>
+            </table>
+            <div style="margin-top:1.5rem;padding:1rem;background:var(--bg-light);border-radius:8px;font-size:0.85rem;color:var(--text-light);">
+              <strong style="color:var(--primary);">스캔 패턴 8종 실시간 전환 지원</strong><br>
+              26°/22°/21°/20° FOV, 1x/2x ROI, 3Hz 저속 모드 등 다양한 운용 모드 제공
+            </div>
+            <div style="margin-top:1.5rem;">
+              <p style="font-size:0.85rem;font-weight:600;color:var(--text-light);margin-bottom:0.5rem;">적용 분야</p>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">ADAS</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Smart City</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Highway</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Railway</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Port</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Mining</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Robotics</span>
+              </div>
+            </div>
+            <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+              <button class="btn-quote" onclick="openQuote('Falcon K2 Ultra')">견적 받기</button>
               <a href="#" class="btn btn-outline" style="color:var(--text);border-color:var(--border);">Datasheet & Manual</a>
             </div>
           </div>
@@ -386,15 +443,21 @@
     <div class="quote-modal">
       <button class="quote-close" onclick="closeQuote()">&times;</button>
       <h3>견적 요청</h3>
-      <div class="quote-product" id="quoteProductName"></div>
+      <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <div class="quote-product" id="quoteProductName" style="margin:0;"></div>
+        <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.85rem;font-weight:500;cursor:pointer;white-space:nowrap;">
+          <input type="checkbox" id="otherInquiryCheck" onchange="toggleOtherInquiry(this.checked)" style="width:1rem;height:1rem;cursor:pointer;accent-color:var(--primary);">
+          기타문의
+        </label>
+      </div>
       <form id="quoteForm">
         <div class="form-group">
           <label>회사명 *</label>
           <input type="text" id="quoteCompany" placeholder="회사명을 입력해주세요" required>
         </div>
         <div class="form-group">
-          <label>담당자명 *</label>
-          <input type="text" id="quoteName" placeholder="성함을 입력해주세요" required>
+          <label>담당자명</label>
+          <input type="text" id="quoteName" placeholder="성함을 입력해주세요">
         </div>
         <div class="form-group">
           <label>이메일 *</label>
@@ -404,8 +467,8 @@
           <label>연락처</label>
           <input type="tel" id="quotePhone" placeholder="010-0000-0000">
         </div>
-        <div class="form-group">
-          <label>주문 수량 *</label>
+        <div class="form-group" id="qtyGroup">
+          <label id="qtyLabel">주문 수량 *</label>
           <input type="text" id="quoteQty" placeholder="예: 10대, 100대, 샘플 1대" required>
         </div>
         <div class="form-group">
@@ -432,6 +495,7 @@
           <h4>Products</h4>
           <ul>
             <li><a href="products.html">Falcon K</a></li>
+            <li><a href="products.html">Falcon K2 Ultra</a></li>
             <li><a href="products.html">Robin W</a></li>
             <li><a href="products.html">Robin E1X</a></li>
             <li><a href="products.html">Hummingbird HD1</a></li>
@@ -490,6 +554,8 @@
     function openQuote(productName) {
       currentProduct = productName;
       document.getElementById('quoteProductName').textContent = productName + ' 견적 요청';
+      document.getElementById('otherInquiryCheck').checked = false;
+      toggleOtherInquiry(false);
       document.getElementById('quoteOverlay').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
@@ -497,6 +563,24 @@
     function closeQuote() {
       document.getElementById('quoteOverlay').classList.remove('active');
       document.body.style.overflow = '';
+    }
+
+    function toggleOtherInquiry(isOther) {
+      const qtyInput = document.getElementById('quoteQty');
+      const qtyLabel = document.getElementById('qtyLabel');
+      const qtyGroup = document.getElementById('qtyGroup');
+      if (isOther) {
+        qtyInput.disabled = true;
+        qtyInput.required = false;
+        qtyInput.value = '';
+        qtyLabel.textContent = '주문 수량';
+        qtyGroup.style.opacity = '0.4';
+      } else {
+        qtyInput.disabled = false;
+        qtyInput.required = true;
+        qtyLabel.textContent = '주문 수량 *';
+        qtyGroup.style.opacity = '1';
+      }
     }
 
     // Close on overlay click
@@ -519,16 +603,19 @@
       const phone = document.getElementById('quotePhone').value;
       const qty = document.getElementById('quoteQty').value;
       const message = document.getElementById('quoteMessage').value;
+      const isOther = document.getElementById('otherInquiryCheck').checked;
 
-      const subject = encodeURIComponent(currentProduct + ' 견적 요청 - ' + company);
+      const inquiryType = isOther ? '기타문의' : '견적 요청';
+      const subject = encodeURIComponent(currentProduct + ' ' + inquiryType + ' - ' + company);
+      const qtyLine = isOther ? '' : '주문 수량: ' + qty + '\n';
       const body = encodeURIComponent(
-        '[ ' + currentProduct + ' 견적 요청 ]\n\n' +
+        '[ ' + currentProduct + ' ' + inquiryType + ' ]\n\n' +
         '회사명: ' + company + '\n' +
         '담당자: ' + name + '\n' +
         '이메일: ' + email + '\n' +
         '연락처: ' + (phone || '-') + '\n' +
-        '주문 수량: ' + qty + '\n\n' +
-        '추가 요청사항:\n' + (message || '없음') + '\n\n' +
+        qtyLine +
+        '\n추가 요청사항:\n' + (message || '없음') + '\n\n' +
         '---\n' +
         'RAYTON 홈페이지 견적 요청 폼에서 발송'
       );
