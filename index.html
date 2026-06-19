@@ -45,6 +45,17 @@
         <p class="section-desc">제품을 클릭하면 상세 스펙을 확인할 수 있습니다.</p>
       </div>
       <div class="overview-grid">
+        <div class="overview-card" data-target="falcon-k2-ultra">
+          <div class="overview-card-img hb-circle">
+            <img src="images/Falcon_K2_Ultra.png" alt="Falcon K2 Ultra">
+          </div>
+          <div class="overview-card-body">
+            <h3>Falcon K2 Ultra</h3>
+            <span>Ultra-long Range</span>
+            <p class="card-range">900m</p>
+            <p class="card-price">출시 예정</p>
+          </div>
+        </div>
         <div class="overview-card selected" data-target="falcon-k">
           <div class="overview-card-img">
             <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K">
@@ -52,17 +63,41 @@
           <div class="overview-card-body">
             <h3>Falcon K</h3>
             <span>Ultra-long Range</span>
-            <p class="card-range">500m+</p>
+            <p class="card-range">500m</p>
+            <p class="card-price">₩14,000,000</p>
           </div>
         </div>
-        <div class="overview-card" data-target="falcon-k2-ultra">
+        <div class="overview-card" data-target="falcon-k-lite">
           <div class="overview-card-img">
-            <img src="images/Falcon_K2_Ultra.png" alt="Falcon K2 Ultra">
+            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K Lite">
           </div>
           <div class="overview-card-body">
-            <h3>Falcon K2 Ultra</h3>
+            <h3>Falcon K Lite</h3>
             <span>Ultra-long Range</span>
-            <p class="card-range">900m</p>
+            <p class="card-range">350m</p>
+            <p class="card-price">₩11,400,000</p>
+          </div>
+        </div>
+        <div class="overview-card" data-target="robin-e1x">
+          <div class="overview-card-img">
+            <img src="https://cdn.imweb.me/thumbnail/20250320/210ad4ae58b66.png" alt="Robin E1X">
+          </div>
+          <div class="overview-card-body">
+            <h3>Robin E1X</h3>
+            <span>Long Range LiDAR</span>
+            <p class="card-range">200m</p>
+            <p class="card-price">₩7,200,000</p>
+          </div>
+        </div>
+        <div class="overview-card" data-target="robin-e1x-plus">
+          <div class="overview-card-img">
+            <img src="https://cdn.imweb.me/thumbnail/20250320/210ad4ae58b66.png" alt="Robin E1X Plus">
+          </div>
+          <div class="overview-card-body">
+            <h3>Robin E1X Plus</h3>
+            <span>Long Range LiDAR</span>
+            <p class="card-range">200m</p>
+            <p class="card-price">출시 예정</p>
           </div>
         </div>
         <div class="overview-card" data-target="robin-w">
@@ -73,36 +108,18 @@
             <h3>Robin W</h3>
             <span>Wide-angle</span>
             <p class="card-range">150m</p>
-          </div>
-        </div>
-        <div class="overview-card" data-target="robin-e1x">
-          <div class="overview-card-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/210ad4ae58b66.png" alt="Robin E1X">
-          </div>
-          <div class="overview-card-body">
-            <h3>Robin E1X</h3>
-            <span>Edge LiDAR</span>
-            <p class="card-range">200m</p>
+            <p class="card-price">₩7,200,000</p>
           </div>
         </div>
         <div class="overview-card" data-target="hummingbird-auto">
           <div class="overview-card-img hb-circle">
-            <img src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1" style="object-fit:contain;padding:1.5rem;">
+            <img src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1" style="object-fit:contain;padding:1.8rem;">
           </div>
           <div class="overview-card-body">
             <h3>Hummingbird HD1</h3>
             <span>Automotive</span>
             <p class="card-range">50m</p>
-          </div>
-        </div>
-        <div class="overview-card" data-target="hummingbird-robot">
-          <div class="overview-card-img hb-circle">
-            <img src="images/Hummingbird_Robotics.png" alt="Hummingbird HD1-R" style="object-fit:contain;padding:1.5rem;">
-          </div>
-          <div class="overview-card-body">
-            <h3>Hummingbird HD1-R</h3>
-            <span>Robotics</span>
-            <p class="card-range">50m</p>
+            <p class="card-price">₩1,848,000</p>
           </div>
         </div>
       </div>
@@ -138,6 +155,48 @@
             </div>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
               <button class="btn-quote" onclick="openQuote('Falcon K')">견적 받기</button>
+              <a href="#" class="btn btn-outline" style="color:var(--text);border-color:var(--border);">Datasheet & Manual</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Falcon K Lite -->
+      <div id="falcon-k-lite" class="product-detail" style="display:none;">
+        <div class="about-grid">
+          <div style="display:flex;align-items:center;justify-content:center;">
+            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K Lite LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
+          </div>
+          <div>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">FALCON K LITE</h2>
+            <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Ultra-long Range LiDAR<br>#V2X #Smart City #ITS</p>
+            <p style="margin-bottom:1rem;">Falcon K Lite는 Falcon K1 LiDAR를 기반으로 Seyond이 개발한 초고성능 산업용 LiDAR로, V2X, 스마트 시티, 스마트 하이웨이 등 다양한 환경에 최적화되어 있습니다.</p>
+            <p style="margin-bottom:2rem;">500m 초장거리 감지와 ROI 모드에서 0.09°×0.15°의 초고해상도로 원거리 소형 물체를 정밀하게 인식합니다. 유연한 ROI 조정으로 장착 위치에 관계없이 높은 다양성의 포인트 클라우드를 제공합니다.</p>
+            <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위 (최대)</td><td style="padding:0.75rem 0;color:var(--text-light);">1.5m ~ 500m</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">감지 범위 (10% 반사율)</td><td style="padding:0.75rem 0;color:var(--text-light);">200m @ 100 klx 직사광</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">거리 정확도</td><td style="padding:0.75rem 0;color:var(--text-light);">±5cm</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 (FOV, non-ROI)</td><td style="padding:0.75rem 0;color:var(--text-light);">HFOV 120° × VFOV 25.6°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 (FOV, ROI)</td><td style="padding:0.75rem 0;color:var(--text-light);">120° × 9.6°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">해상도 (non-ROI)</td><td style="padding:0.75rem 0;color:var(--text-light);">0.18° × 0.4°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">해상도 (ROI)</td><td style="padding:0.75rem 0;color:var(--text-light);">0.09° × 0.15°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">프레임 레이트</td><td style="padding:0.75rem 0;color:var(--text-light);">10 FPS (5~20 FPS 조정 가능)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">스캐닝 라인</td><td style="padding:0.75rem 0;color:var(--text-light);">1120 lines/sec</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">파장 / 안전 등급</td><td style="padding:0.75rem 0;color:var(--text-light);">1550nm, Class 1 (IEC 60825-1)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 전압</td><td style="padding:0.75rem 0;color:var(--text-light);">9 ~ 34V DC (기준 12V/22.5W)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">데이터 인터페이스</td><td style="padding:0.75rem 0;color:var(--text-light);">1000Base-T1 Ethernet (UDP, TCP)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 온도</td><td style="padding:0.75rem 0;color:var(--text-light);">-40°C ~ +85°C</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">방수방진</td><td style="padding:0.75rem 0;color:var(--text-light);">IP67(body), IP69K(window)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">크기 (H×W×D)</td><td style="padding:0.75rem 0;color:var(--text-light);">58.9mm × 228mm × 149.6mm</td></tr>
+              <tr><td style="padding:0.75rem 0;font-weight:600;">무게</td><td style="padding:0.75rem 0;color:var(--text-light);">1.75 kg</td></tr>
+            </table>
+            <div class="product-price">
+              <p class="price-label">가격</p>
+              <p class="price-amount">₩11,400,000</p>
+              <p class="price-note">* 라이다 단품기준, ACC 및 케이블 제외 가격</p>
+            </div>
+            <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+              <button class="btn-quote" onclick="openQuote('Falcon K Lite')">견적 받기</button>
               <a href="#" class="btn btn-outline" style="color:var(--text);border-color:var(--border);">Datasheet & Manual</a>
             </div>
           </div>
@@ -188,7 +247,7 @@
             </div>
             <div class="product-price">
               <p class="price-label">가격</p>
-              <p class="price-inquiry">별도 문의</p>
+              <p class="price-inquiry">출시 예정</p>
               <p class="price-note">* 라이다 단품기준, ACC 및 케이블 제외 가격</p>
             </div>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
@@ -237,13 +296,26 @@
           </div>
           <div>
             <h2 style="color:var(--primary);margin-bottom:0.5rem;">ROBIN E1X</h2>
-            <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Edge LiDAR<br>#Intelligent #Efficient</p>
-            <p style="margin-bottom:1rem;">Robin E1X는 엣지 컴퓨팅 기반의 차세대 LiDAR 솔루션으로, 지능형 교통 시스템(ITS)과 스마트 인프라에 특화된 제품입니다.</p>
-            <p style="margin-bottom:2rem;">내장된 인텔리전트 알고리즘으로 실시간 객체 인식과 추적이 가능하며, 효율적인 데이터 처리로 시스템 구축 비용을 절감합니다.</p>
+            <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Long Range LiDAR<br>#Platform-driven #Ultra-low Power</p>
+            <p style="margin-bottom:1rem;">플랫폼 기반 설계로 핵심 광학 스캐닝 구조를 단순화하여 탁월한 포인트 클라우드 일관성을 실현한 장거리 LiDAR입니다.</p>
+            <p style="margin-bottom:2rem;">초저전력(6.3W)의 슬림한 바디로 대량 생산에 최적화되었으며, 앞유리 뒤, 헤드라이트, 그릴, 전면 범퍼 등 다양한 위치에 유연하게 장착할 수 있습니다. ADAS/AD, 스마트시티, 도로·철도·항만 등 폭넓은 분야에 적용됩니다.</p>
             <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">처리 방식</td><td style="padding:0.75rem 0;color:var(--text-light);">Edge Computing 내장</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">기능</td><td style="padding:0.75rem 0;color:var(--text-light);">실시간 객체 인식 & 추적</td></tr>
-              <tr><td style="padding:0.75rem 0;font-weight:600;">적용 분야</td><td style="padding:0.75rem 0;color:var(--text-light);">ITS, 스마트 인프라, 교차로 모니터링</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위 (최대)</td><td style="padding:0.75rem 0;color:var(--text-light);">1m ~ 250m</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">감지 범위 (10% 반사율)</td><td style="padding:0.75rem 0;color:var(--text-light);">200m</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 (FOV)</td><td style="padding:0.75rem 0;color:var(--text-light);">120° × 20°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">해상도 (H×V)</td><td style="padding:0.75rem 0;color:var(--text-light);">0.1° × 0.1°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">스캐닝 라인</td><td style="padding:0.75rem 0;color:var(--text-light);">96 / 192 lines*</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">프레임 레이트</td><td style="padding:0.75rem 0;color:var(--text-light);">10 FPS</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">거리 정확도</td><td style="padding:0.75rem 0;color:var(--text-light);">±5cm</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">거리 정밀도</td><td style="padding:0.75rem 0;color:var(--text-light);">3cm (1σ)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 온도</td><td style="padding:0.75rem 0;color:var(--text-light);">-40°C ~ 85°C</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">방수방진</td><td style="padding:0.75rem 0;color:var(--text-light);">IP69K(window), IP67(body)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">레이저</td><td style="padding:0.75rem 0;color:var(--text-light);">940nm, Class 1 (IEC 60825-1)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 전압</td><td style="padding:0.75rem 0;color:var(--text-light);">9 ~ 16V DC</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">소비 전력</td><td style="padding:0.75rem 0;color:var(--text-light);">6.3W</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">데이터 인터페이스</td><td style="padding:0.75rem 0;color:var(--text-light);">1000Base-T1 Ethernet</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">크기 (H×W×D)</td><td style="padding:0.75rem 0;color:var(--text-light);">30mm × 106mm × 101mm</td></tr>
+              <tr><td style="padding:0.75rem 0;font-weight:600;">무게</td><td style="padding:0.75rem 0;color:var(--text-light);">470g</td></tr>
             </table>
             <div class="product-price">
               <p class="price-label">가격</p>
@@ -261,8 +333,9 @@
       <!-- Hummingbird HD1 - Automotive -->
       <div id="hummingbird-auto" class="product-detail" style="display:none;">
         <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1 Automotive" style="max-width:100%;height:auto;border-radius:16px;">
+          <div style="display:flex;align-items:center;justify-content:center;position:relative;">
+            <div style="position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(78,205,196,0.2);z-index:0;"></div>
+            <img src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1 Automotive" style="max-width:40%;height:auto;border-radius:16px;position:relative;z-index:1;">
           </div>
           <div>
             <h2 style="color:var(--primary);margin-bottom:0.5rem;">HUMMINGBIRD HD1</h2>
