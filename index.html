@@ -111,15 +111,19 @@
             <p class="card-price">₩7,200,000</p>
           </div>
         </div>
-        <div class="overview-card" data-target="hummingbird-auto">
+        <div class="overview-card" data-target="hummingbird-auto" id="hb-card">
           <div class="overview-card-img hb-circle">
-            <img src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1" style="object-fit:contain;padding:1.8rem;">
+            <img id="hb-card-img" src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1" style="object-fit:contain;padding:1.8rem;">
           </div>
           <div class="overview-card-body">
             <h3>Hummingbird HD1</h3>
-            <span>Automotive</span>
+            <span id="hb-card-label">Automotive</span>
             <p class="card-range">50m</p>
             <p class="card-price">₩1,848,000</p>
+            <div class="hb-version-toggle" onclick="event.stopPropagation()">
+              <button class="hb-ver-btn active" data-ver="hummingbird-auto" data-img="images/Hummingbird_Automotive.png" data-label="Automotive">Auto</button>
+              <button class="hb-ver-btn" data-ver="hummingbird-robot" data-img="images/Hummingbird_Robotics.png" data-label="Robotics">Robot</button>
+            </div>
           </div>
         </div>
       </div>
@@ -137,24 +141,67 @@
             <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
           </div>
           <div>
-            <h2 style="color:var(--primary);margin-bottom:0.5rem;">FALCON K</h2>
-            <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Ultra-long Range LiDAR<br>#High Fidelity #Reliable</p>
-            <p style="margin-bottom:1rem;">Falcon K는 높은 해상도, 초장거리, 신뢰성 500m 이상 주행 거리를 자랑하고, 정밀한 물체 감지 및 추적을 위해 뛰어난 해상도로 높은 충실도의 데이터를 제공합니다.</p>
-            <p style="margin-bottom:2rem;">정확하고 엄격한 테스트를 거친 이 대량 생산된 센서는 자동차, 지능형 교통, 로봇 공학 및 스마트 인프라 전반에 걸쳐 안전을 보장합니다.</p>
+            <h2 style="color:var(--primary);margin-bottom:0.5rem;">FALCON K2</h2>
+            <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Ultra-long Range LiDAR<br>#High Fidelity #Automotive Grade #L2+</p>
+            <p style="margin-bottom:1rem;">Falcon K2는 Seyond의 포워드 엔지니어링으로 개발된 자동차 등급 LiDAR입니다. 최대 500m의 초장거리 감지와 조절 가능한 ROI(관심 영역)에서 포인트 밀도를 극대화하여 도로 위 물체를 정밀하게 추적합니다.</p>
+            <p style="margin-bottom:2rem;">1550nm 파장의 Eye-safe 레이저와 뛰어난 환경 적응력으로 L2+ 자율주행 및 스마트 교통 인프라 구축의 핵심 센서로, 대량 양산 체제가 갖춰진 제품입니다.</p>
             <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위</td><td style="padding:0.75rem 0;color:var(--text-light);">500m</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">파장</td><td style="padding:0.75rem 0;color:var(--text-light);">1550nm (Eye-safe)</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">기술</td><td style="padding:0.75rem 0;color:var(--text-light);">Solid-state, Image-grade</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">적용 분야</td><td style="padding:0.75rem 0;color:var(--text-light);">자동차, ITS, 로봇 공학, 스마트 인프라</td></tr>
-              <tr><td style="padding:0.75rem 0;font-weight:600;">자율주행 레벨</td><td style="padding:0.75rem 0;color:var(--text-light);">Level 3</td></tr>
+              <tr style="background:var(--bg-light);"><td colspan="2" style="padding:0.5rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;color:var(--text-light);">광학 성능</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위 (최대)</td><td style="padding:0.75rem 0;color:var(--text-light);">1.5m ~ 500m</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">감지 범위 (10% 반사율)</td><td style="padding:0.75rem 0;color:var(--text-light);">250m @ 100 klx 직사광, POD>90%</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">거리 정확도</td><td style="padding:0.75rem 0;color:var(--text-light);">±2cm</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">거리 정밀도</td><td style="padding:0.75rem 0;color:var(--text-light);">최대 2cm (1σ)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">거리 해상도</td><td style="padding:0.75rem 0;color:var(--text-light);">0.5cm</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">수직 스캐닝 라인</td><td style="padding:0.75rem 0;color:var(--text-light);">1,500 lines/sec</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 non-ROI (H×V)</td><td style="padding:0.75rem 0;color:var(--text-light);">120° × 25°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 ROI (H×V)</td><td style="padding:0.75rem 0;color:var(--text-light);">120° × 9.6°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">해상도 non-ROI (H×V)</td><td style="padding:0.75rem 0;color:var(--text-light);">0.08° × 0.089°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">해상도 ROI (H×V)</td><td style="padding:0.75rem 0;color:var(--text-light);">0.6°×0.6°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">각도 정확도</td><td style="padding:0.75rem 0;color:var(--text-light);">±0.1°</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">프레임 레이트</td><td style="padding:0.75rem 0;color:var(--text-light);">10 FPS</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">리턴 수</td><td style="padding:0.75rem 0;color:var(--text-light);">최대 2 returns</td></tr>
+              <tr style="background:var(--bg-light);"><td colspan="2" style="padding:0.5rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;color:var(--text-light);">레이저</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">파장 / 안전 등급</td><td style="padding:0.75rem 0;color:var(--text-light);">1550nm, Class 1 (IEC 60825-1:2014)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">빔 발산각</td><td style="padding:0.75rem 0;color:var(--text-light);">0.1° (Full Angle)</td></tr>
+              <tr style="background:var(--bg-light);"><td colspan="2" style="padding:0.5rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;color:var(--text-light);">데이터 출력</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">데이터 인터페이스</td><td style="padding:0.75rem 0;color:var(--text-light);">1000Base-T1 Ethernet (UDP, TCP/IP)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">초당 포인트 수</td><td style="padding:0.75rem 0;color:var(--text-light);">1,370,000 pts/s @1 return<br>2,740,000 pts/s @2 return</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">데이터 전송 속도</td><td style="padding:0.75rem 0;color:var(--text-light);">11.69 MB/s @1 return / 17.45 MB/s @2 return</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시간 동기화</td><td style="padding:0.75rem 0;color:var(--text-light);">PTP (IEEE1588), gPTP (IEEE 802.1as), NTP</td></tr>
+              <tr style="background:var(--bg-light);"><td colspan="2" style="padding:0.5rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;color:var(--text-light);">기계 / 전기</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 전압</td><td style="padding:0.75rem 0;color:var(--text-light);">9 ~ 32V DC (기준 12V)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">소비 전력</td><td style="padding:0.75rem 0;color:var(--text-light);">20W</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">커넥터</td><td style="padding:0.75rem 0;color:var(--text-light);">전용 플러그형 커넥터 (전원 + Auto Ethernet + CAN)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">크기 (H×W×D)</td><td style="padding:0.75rem 0;color:var(--text-light);">58.9mm × 228mm × 149.6mm</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">무게</td><td style="padding:0.75rem 0;color:var(--text-light);">1.7 kg</td></tr>
+              <tr style="background:var(--bg-light);"><td colspan="2" style="padding:0.5rem 0.75rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;color:var(--text-light);">환경 / 인증</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 온도</td><td style="padding:0.75rem 0;color:var(--text-light);">-40°C ~ +85°C</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">보관 온도</td><td style="padding:0.75rem 0;color:var(--text-light);">-40°C ~ +105°C</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">방수방진</td><td style="padding:0.75rem 0;color:var(--text-light);">IP67 (본체), IP69K (윈도우)</td></tr>
+              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">충격</td><td style="padding:0.75rem 0;color:var(--text-light);">IEC 60068-2-27</td></tr>
+              <tr><td style="padding:0.75rem 0;font-weight:600;">진동</td><td style="padding:0.75rem 0;color:var(--text-light);">IEC 60068-2-64</td></tr>
             </table>
+            <div style="margin-top:1.5rem;padding:1rem;background:var(--bg-light);border-radius:8px;font-size:0.85rem;color:var(--text-light);">
+              <strong style="color:var(--primary);">조절 가능한 ROI 지원</strong><br>
+              관심 영역을 유연하게 설정하여 원거리 소형 물체 정밀 감지 · ROS/ROS2 드라이버 제공
+            </div>
+            <div style="margin-top:1.5rem;">
+              <p style="font-size:0.85rem;font-weight:600;color:var(--text-light);margin-bottom:0.5rem;">적용 분야</p>
+              <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">ADAS / L2+</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Smart City</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">ITS</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Robotics</span>
+                <span style="background:var(--bg-light);padding:0.3rem 0.75rem;border-radius:20px;font-size:0.8rem;font-weight:600;">Smart Infrastructure</span>
+              </div>
+            </div>
             <div class="product-price">
               <p class="price-label">가격</p>
               <p class="price-amount">₩14,000,000</p>
               <p class="price-note">* 라이다 단품기준, ACC 및 케이블 제외 가격</p>
             </div>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-              <button class="btn-quote" onclick="openQuote('Falcon K')">견적 받기</button>
+              <button class="btn-quote" onclick="openQuote('Falcon K2')">견적 받기</button>
               <a href="#" class="btn btn-outline" style="color:var(--text);border-color:var(--border);">Datasheet & Manual</a>
             </div>
           </div>
@@ -213,7 +260,7 @@
             <h2 style="color:var(--primary);margin-bottom:0.5rem;">FALCON K2 ULTRA</h2>
             <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Ultra-long Range LiDAR<br>#High Resolution #900m Range</p>
             <p style="margin-bottom:1rem;">Falcon K2 Ultra는 자체 설계 ASIC 칩 기반으로 고해상도와 초장거리 감지 능력을 동시에 구현한 플래그십 LiDAR입니다. 최대 900m의 감지 거리와 8가지 스캔 패턴 실시간 전환을 지원합니다.</p>
-            <p style="margin-bottom:2rem;">ADAS, 스마트 시티, 고속도로, 철도, 항만, 광산 등 다양한 분야에 적합하며, 자동차 등급 기준으로 설계되어 평생 신뢰성을 보장합니다.</p>
+            <p style="margin-bottom:2rem;">ADAS, 스마트 시티, 고속도로, 철도, 항만, 광산 등 다양한 분야에 적합하며, 자동차 등급 기준으로 설계되어 장기적인 안정성과 신뢰성을 보장합니다.</p>
             <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
               <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위</td><td style="padding:0.75rem 0;color:var(--text-light);">2m~900m (500m@10%)</td></tr>
               <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 (FOV)</td><td style="padding:0.75rem 0;color:var(--text-light);">120°×26°</td></tr>
@@ -512,6 +559,32 @@
         card.classList.add('selected');
         document.querySelectorAll('.product-detail').forEach(d => d.style.display = 'none');
         const detail = document.getElementById(target);
+        if (detail) {
+          detail.style.display = 'block';
+          detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    document.querySelectorAll('.hb-ver-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const ver = this.dataset.ver;
+        const img = this.dataset.img;
+        const label = this.dataset.label;
+        const card = document.getElementById('hb-card');
+
+        document.querySelectorAll('.hb-ver-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        card.dataset.target = ver;
+        document.getElementById('hb-card-img').src = img;
+        document.getElementById('hb-card-label').textContent = label;
+
+        document.querySelectorAll('.overview-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        document.querySelectorAll('.product-detail').forEach(d => d.style.display = 'none');
+        const detail = document.getElementById(ver);
         if (detail) {
           detail.style.display = 'block';
           detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
