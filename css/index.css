@@ -332,3 +332,48 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(10,46,26,0.3);
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .overview-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .overview-card-img { height: 110px; padding: 0.75rem; }
+  .overview-card-body { padding: 0.75rem; }
+  .overview-card-body h3 { font-size: 0.8rem; }
+  .card-price {
+    max-height: 2rem;
+    opacity: 1;
+    padding-top: 0.4rem;
+  }
+
+  .sticky-quote-bar { padding: 0.7rem 0; }
+  .sticky-bar-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+  .sticky-bar-name { font-size: 1.3rem; text-align: center; }
+  .sticky-bar-right {
+    width: 100%;
+    gap: 1rem;
+  }
+  .sticky-bar-price-wrap { align-items: flex-start; }
+  .sticky-bar-price { font-size: 1.1rem; }
+  .sticky-bar-btn {
+    flex: 1;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.92rem;
+  }
+
+  .product-detail table { font-size: 0.82rem !important; }
+  .product-detail table td { padding: 0.6rem 0 !important; }
+}
