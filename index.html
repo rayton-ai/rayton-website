@@ -44,102 +44,103 @@
         <h2 class="section-title">Seyond LiDAR 제품군</h2>
         <p class="section-desc">제품을 클릭하면 상세 스펙을 확인할 수 있습니다.</p>
       </div>
-      <div class="overview-grid">
-        <div class="overview-card" data-target="falcon-k2-ultra">
-          <div class="overview-card-img hb-circle">
-            <img src="images/Falcon_K2_Ultra.png" alt="Falcon K2 Ultra">
-          </div>
-          <div class="overview-card-body">
-            <h3>Falcon K2 Ultra</h3>
-            <span>Ultra-long Range</span>
-            <p class="card-range">900m</p>
-            <p class="card-price">출시 예정</p>
-          </div>
-        </div>
-        <div class="overview-card selected" data-target="falcon-k">
-          <div class="overview-card-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K">
-          </div>
-          <div class="overview-card-body">
-            <h3>Falcon K</h3>
-            <span>Ultra-long Range</span>
-            <p class="card-range">500m</p>
-            <p class="card-price">₩15,700,000</p>
-          </div>
-        </div>
-        <div class="overview-card" data-target="falcon-k-lite">
-          <div class="overview-card-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K Lite">
-          </div>
-          <div class="overview-card-body">
-            <h3>Falcon K Lite</h3>
-            <span>Ultra-long Range</span>
-            <p class="card-range">350m</p>
-            <p class="card-price">₩13,070,000</p>
-          </div>
-        </div>
-        <div class="overview-card" data-target="robin-e1x">
-          <div class="overview-card-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/210ad4ae58b66.png" alt="Robin E1X">
-          </div>
-          <div class="overview-card-body">
-            <h3>Robin E1X</h3>
-            <span>Long Range</span>
-            <p class="card-range">200m</p>
-            <p class="card-price">₩8,560,000</p>
-          </div>
-        </div>
-        <div class="overview-card" data-target="robin-e1x-plus">
-          <div class="overview-card-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/210ad4ae58b66.png" alt="Robin E1X Plus">
-          </div>
-          <div class="overview-card-body">
-            <h3>Robin E1X Plus</h3>
-            <span>Long Range</span>
-            <p class="card-range">200m</p>
-            <p class="card-price">₩8,560,000</p>
-          </div>
-        </div>
-        <div class="overview-card" data-target="robin-w">
-          <div class="overview-card-img">
-            <img src="https://cdn.imweb.me/thumbnail/20250319/bf561b0d71753.png" alt="Robin W">
-          </div>
-          <div class="overview-card-body">
-            <h3>Robin W</h3>
-            <span>Wide-angle</span>
-            <p class="card-range">150m</p>
-            <p class="card-price">₩8,560,000</p>
-          </div>
-        </div>
-        <div class="overview-card" data-target="hummingbird-auto" id="hb-card">
-          <div class="overview-card-img hb-circle">
-            <img id="hb-card-img" src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1" style="object-fit:contain;padding:1.8rem;">
-          </div>
-          <div class="overview-card-body">
-            <h3>Hummingbird HD1</h3>
-            <span id="hb-card-label">Automotive</span>
-            <p class="card-range">50m</p>
-            <p class="card-price">₩2,230,000</p>
-            <div class="hb-version-toggle" onclick="event.stopPropagation()">
-              <button class="hb-ver-btn active" data-ver="hummingbird-auto" data-img="images/Hummingbird_Automotive.png" data-label="Automotive">Auto</button>
-              <button class="hb-ver-btn" data-ver="hummingbird-robot" data-img="images/Hummingbird_Robotics.png" data-label="Robotics">Robot</button>
+      <div class="overview-zones">
+        <div class="category-zone">
+          <p class="category-label">산업안전 / 보안</p>
+          <div class="overview-grid-3">
+            <div class="overview-card selected" id="falcon-card" data-target="falcon-k">
+              <div class="overview-card-img">
+                <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon">
+              </div>
+              <div class="overview-card-body">
+                <h3>Falcon</h3>
+                <span>Ultra-long Range</span>
+                <p class="card-range" id="falcon-card-range">500m</p>
+              </div>
+            </div>
+            <div class="overview-card" data-target="robin-e1x-plus">
+              <div class="overview-card-img">
+                <img src="https://cdn.imweb.me/thumbnail/20250320/210ad4ae58b66.png" alt="Robin E1X Plus">
+              </div>
+              <div class="overview-card-body">
+                <h3>Robin E1X Plus</h3>
+                <span>Long Range</span>
+                <p class="card-range">200m</p>
+                <p class="card-price">₩8,560,000</p>
+              </div>
+            </div>
+            <div class="overview-card" data-target="robin-w">
+              <div class="overview-card-img">
+                <img src="https://cdn.imweb.me/thumbnail/20250319/bf561b0d71753.png" alt="Robin W">
+              </div>
+              <div class="overview-card-body">
+                <h3>Robin W</h3>
+                <span>Wide-angle</span>
+                <p class="card-range">150m</p>
+                <p class="card-price">₩8,560,000</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="overview-card" data-target="hummingbird-mini">
-          <div class="overview-card-img hb-circle">
-            <img src="images/Hummingbird_Mini.png" alt="Hummingbird Mini" style="object-fit:contain;padding:1.2rem;">
-          </div>
-          <div class="overview-card-body">
-            <h3>Hummingbird Mini</h3>
-            <span>Ultra-compact</span>
-            <p class="card-range">10m</p>
-            <p class="card-price">출시 예정</p>
+        <div class="category-zone">
+          <p class="category-label">로보틱스</p>
+          <div class="overview-grid-3">
+            <div class="overview-card" data-target="hummingbird-robot" id="hb-card">
+              <div class="overview-card-img hb-circle">
+                <img id="hb-card-img" src="images/Hummingbird_Robotics.png" alt="Hummingbird HD1" style="object-fit:contain;padding:0.6rem;">
+              </div>
+              <div class="overview-card-body">
+                <h3>Hummingbird 140</h3>
+                <span id="hb-card-label">Robotics</span>
+                <p class="card-range">50m</p>
+              </div>
+            </div>
+             <div class="overview-card" data-target="hummingbird-180">
+              <div class="overview-card-img hb-circle">
+                <img src="images/Hummingbird_180.png" alt="Hummingbird 180" style="object-fit:contain;padding:2.0rem;">
+              </div>
+              <div class="overview-card-body">
+                <h3>Hummingbird 180</h3>
+                <span>Ultra-Wide</span>
+                <p class="card-range">10m</p>
+                <p class="card-price">출시 예정</p>
+              </div>
+            </div>
+            <div class="overview-card" data-target="hummingbird-mini">
+              <div class="overview-card-img hb-circle">
+                <img src="images/Hummingbird_Mini.png" alt="Hummingbird Mini" style="object-fit:contain;padding:2.0rem;">
+              </div>
+              <div class="overview-card-body">
+                <h3>Hummingbird Mini</h3>
+                <span>Ultra-compact</span>
+                <p class="card-range">10m</p>
+                <p class="card-price">출시 예정</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Falcon variant selector -->
+  <div id="falcon-sub-nav" class="falcon-sub-nav">
+    <div class="falcon-toggle">
+      <span class="falcon-toggle-indicator"></span>
+      <button class="falcon-ver-btn" data-ver="falcon-k2-ultra" data-range="900m">Ultra</button>
+      <button class="falcon-ver-btn active" data-ver="falcon-k" data-range="500m">K2</button>
+      <button class="falcon-ver-btn" data-ver="falcon-k-lite" data-range="350m">Lite</button>
+    </div>
+  </div>
+
+  <!-- Hummingbird variant selector -->
+  <div id="hb-sub-nav" class="hb-sub-nav hidden">
+    <div class="hb-version-toggle">
+      <span class="hb-toggle-indicator"></span>
+      <button class="hb-ver-btn active" data-ver="hummingbird-robot" data-img="images/Hummingbird_Robotics.png" data-label="Robotics">Robot</button>
+      <button class="hb-ver-btn" data-ver="hummingbird-auto" data-img="images/Hummingbird_Automotive.png" data-label="Automotive">Auto</button>
+    </div>
+  </div>
 
   <!-- Product Detail Section -->
   <section id="product-detail-section" style="padding-top:3rem;">
@@ -148,8 +149,8 @@
       <!-- Falcon K -->
       <div id="falcon-k" class="product-detail active-product">
         <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
+          <div class="falcon-detail-img">
+            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K2" style="max-width:100%;height:auto;border-radius:16px;">
           </div>
           <div>
             <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -192,8 +193,8 @@
       <!-- Falcon K Lite -->
       <div id="falcon-k-lite" class="product-detail" style="display:none;">
         <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K Lite LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
+          <div class="falcon-detail-img">
+            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K Lite" style="max-width:100%;height:auto;border-radius:16px;">
           </div>
           <div>
             <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -223,8 +224,8 @@
       <!-- Falcon K2 Ultra -->
       <div id="falcon-k2-ultra" class="product-detail" style="display:none;">
         <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="images/Falcon_K2_Ultra.png" alt="Falcon K2 Ultra LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
+          <div class="falcon-detail-img">
+            <img src="https://cdn.imweb.me/thumbnail/20250320/2879a83dd8d27.png" alt="Falcon K2 Ultra" style="max-width:100%;height:auto;border-radius:16px;">
           </div>
           <div>
             <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -293,36 +294,6 @@
         </div>
       </div>
 
-      <!-- Robin E1X -->
-      <div id="robin-e1x" class="product-detail" style="display:none;">
-        <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="https://cdn.imweb.me/thumbnail/20250320/210ad4ae58b66.png" alt="Robin E1X LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
-          </div>
-          <div>
-            <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
-              <h2 style="color:var(--primary);margin-bottom:0;">ROBIN E1X</h2>
-              <a href="#" class="btn-datasheet">Datasheet &amp; Manual</a>
-            </div>
-            <p class="product-tag" style="font-size:1rem;margin-bottom:1.5rem;">Long Range LiDAR<br>#Platform-driven #Ultra-low Power</p>
-            <p style="margin-bottom:1rem;">플랫폼 기반 설계로 핵심 광학 스캐닝 구조를 단순화하여 탁월한 포인트 클라우드 일관성을 실현한 장거리 LiDAR입니다.</p>
-            <p style="margin-bottom:2rem;">초저전력(6.3W)의 슬림한 바디로 대량 생산에 최적화되었으며, 앞유리 뒤, 헤드라이트, 그릴, 전면 범퍼 등 다양한 위치에 유연하게 장착할 수 있습니다. ADAS/AD, 스마트시티, 도로·철도·항만 등 폭넓은 분야에 적용됩니다.</p>
-            <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;width:40%;">감지 범위 (최대)</td><td style="padding:0.75rem 0;color:var(--text-light);">1m ~ 250m</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">감지 범위 (10% 반사율)</td><td style="padding:0.75rem 0;color:var(--text-light);">200m</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">시야각 (FOV)</td><td style="padding:0.75rem 0;color:var(--text-light);">120° × 20°</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">해상도 (H×V)</td><td style="padding:0.75rem 0;color:var(--text-light);">0.1° × 0.2°</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">스캐닝 라인</td><td style="padding:0.75rem 0;color:var(--text-light);">96 / 192 lines</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">프레임 레이트</td><td style="padding:0.75rem 0;color:var(--text-light);">10 FPS</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">파장 / 안전 등급</td><td style="padding:0.75rem 0;color:var(--text-light);">940nm, Class 1 (IEC 60825-1)</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">동작 온도</td><td style="padding:0.75rem 0;color:var(--text-light);">-40°C ~ 85°C</td></tr>
-              <tr style="border-bottom:1px solid var(--border);"><td style="padding:0.75rem 0;font-weight:600;">방수방진</td><td style="padding:0.75rem 0;color:var(--text-light);">IP69K (윈도우), IP67 (본체)</td></tr>
-              <tr><td style="padding:0.75rem 0;font-weight:600;">크기 / 무게</td><td style="padding:0.75rem 0;color:var(--text-light);">30×106×101mm / 470g / 6.3W</td></tr>
-            </table>
-          </div>
-        </div>
-      </div>
-
       <!-- Robin E1X Plus -->
       <div id="robin-e1x-plus" class="product-detail" style="display:none;">
         <div class="about-grid">
@@ -370,8 +341,8 @@
       <!-- Hummingbird Mini -->
       <div id="hummingbird-mini" class="product-detail" style="display:none;">
         <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="images/Hummingbird_Mini.png" alt="Hummingbird Mini LiDAR" style="max-width:100%;height:auto;border-radius:16px;">
+          <div class="hb-detail-img">
+            <img src="images/Hummingbird_Mini.png" alt="Hummingbird Mini LiDAR">
           </div>
           <div>
             <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -420,9 +391,8 @@
       <!-- Hummingbird HD1 - Automotive -->
       <div id="hummingbird-auto" class="product-detail" style="display:none;">
         <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;position:relative;">
-            <div style="position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(78,205,196,0.2);z-index:0;"></div>
-            <img src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1 Automotive" style="max-width:40%;height:auto;border-radius:16px;position:relative;z-index:1;">
+          <div class="hb-detail-img">
+            <img src="images/Hummingbird_Automotive.png" alt="Hummingbird HD1 Automotive">
           </div>
           <div>
             <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -450,8 +420,8 @@
       <!-- Hummingbird HD1-R - Robotics -->
       <div id="hummingbird-robot" class="product-detail" style="display:none;">
         <div class="about-grid">
-          <div style="display:flex;align-items:center;justify-content:center;">
-            <img src="images/Hummingbird_Robotics.png" alt="Hummingbird HD1-R Robotics" style="max-width:100%;height:auto;border-radius:16px;">
+          <div class="hb-detail-img">
+            <img src="images/Hummingbird_Robotics.png" alt="Hummingbird HD1-R Robotics" style="max-width:55%;">
           </div>
           <div>
             <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
@@ -592,7 +562,6 @@
       'falcon-k-lite':   { name: 'Falcon K Lite',   price: '₩13,070,000', inquiry: false },
       'falcon-k2-ultra': { name: 'Falcon K2 Ultra', price: '출시 예정',    inquiry: true  },
       'robin-w':         { name: 'Robin W',          price: '₩8,560,000',  inquiry: false },
-      'robin-e1x':       { name: 'Robin E1X',        price: '₩8,560,000',  inquiry: false },
       'robin-e1x-plus':  { name: 'Robin E1X Plus',   price: '₩8,560,000',  inquiry: false },
       'hummingbird-mini':  { name: 'Hummingbird Mini',  price: '출시 예정',   inquiry: true  },
       'hummingbird-auto':  { name: 'Hummingbird HD1',   price: '₩2,230,000', inquiry: false },
@@ -632,6 +601,10 @@
 
     window.addEventListener('scroll', updateStickyPosition, { passive: true });
 
+    const falconSubNav = document.getElementById('falcon-sub-nav');
+    const falconCard = document.getElementById('falcon-card');
+    const hbSubNav = document.getElementById('hb-sub-nav');
+
     document.querySelectorAll('.overview-card').forEach(card => {
       card.addEventListener('click', () => {
         const target = card.dataset.target;
@@ -639,12 +612,70 @@
         card.classList.add('selected');
         document.querySelectorAll('.product-detail').forEach(d => d.style.display = 'none');
         const detail = document.getElementById(target);
-        if (detail) {
-          detail.style.display = 'block';
-        }
+        if (detail) detail.style.display = 'block';
         setStickyBar(target);
+        falconSubNav.classList.toggle('hidden', card.id !== 'falcon-card');
+        hbSubNav.classList.toggle('hidden', card.id !== 'hb-card');
       });
     });
+
+    const falconIndicator = document.querySelector('.falcon-toggle-indicator');
+    function moveFalconIndicator(btn) {
+      const toggle = btn.closest('.falcon-toggle');
+      const toggleRect = toggle.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      falconIndicator.style.width = btnRect.width + 'px';
+      falconIndicator.style.height = btnRect.height + 'px';
+      falconIndicator.style.transform = `translateX(${btnRect.left - toggleRect.left - 5}px)`;
+    }
+
+    // Init indicator on active button (no animation on load)
+    const initBtn = document.querySelector('.falcon-ver-btn.active');
+    if (initBtn) {
+      falconIndicator.style.transition = 'none';
+      moveFalconIndicator(initBtn);
+      requestAnimationFrame(() => {
+        falconIndicator.style.transition = '';
+      });
+    }
+
+    document.querySelectorAll('.falcon-ver-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const ver = this.dataset.ver;
+
+        document.querySelectorAll('.falcon-ver-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        moveFalconIndicator(this);
+
+        falconCard.dataset.target = ver;
+        document.getElementById('falcon-card-range').textContent = this.dataset.range;
+
+        document.querySelectorAll('.overview-card').forEach(c => c.classList.remove('selected'));
+        falconCard.classList.add('selected');
+        document.querySelectorAll('.product-detail').forEach(d => d.style.display = 'none');
+        const detail = document.getElementById(ver);
+        if (detail) detail.style.display = 'block';
+        setStickyBar(ver);
+        hbSubNav.classList.add('hidden');
+      });
+    });
+
+    const hbIndicator = document.querySelector('.hb-toggle-indicator');
+    function moveHbIndicator(btn) {
+      const toggle = btn.closest('.hb-version-toggle');
+      const toggleRect = toggle.getBoundingClientRect();
+      const btnRect = btn.getBoundingClientRect();
+      hbIndicator.style.width = btnRect.width + 'px';
+      hbIndicator.style.height = btnRect.height + 'px';
+      hbIndicator.style.transform = `translateX(${btnRect.left - toggleRect.left - 5}px)`;
+    }
+
+    const hbInitBtn = document.querySelector('.hb-ver-btn.active');
+    if (hbInitBtn) {
+      hbIndicator.style.transition = 'none';
+      moveHbIndicator(hbInitBtn);
+      requestAnimationFrame(() => { hbIndicator.style.transition = ''; });
+    }
 
     document.querySelectorAll('.hb-ver-btn').forEach(btn => {
       btn.addEventListener('click', function(e) {
@@ -656,6 +687,7 @@
 
         document.querySelectorAll('.hb-ver-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
+        moveHbIndicator(this);
 
         card.dataset.target = ver;
         document.getElementById('hb-card-img').src = img;
@@ -740,6 +772,19 @@
       window.location.href = 'mailto:info@rayton.ai?subject=' + subject + '&body=' + body;
       closeQuote();
     });
+  </script>
+
+  <script>
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        if (data.country_code !== 'KR') {
+          document.querySelectorAll('.card-price, .product-price, .sticky-bar-price-wrap').forEach(el => {
+            el.style.display = 'none';
+          });
+        }
+      })
+      .catch(() => {});
   </script>
   <button class="back-to-top" aria-label="맨 위로">↑</button>
 </body>

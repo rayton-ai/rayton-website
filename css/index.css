@@ -1,10 +1,37 @@
 /* Product Overview Cards */
 .product-overview { padding: 7rem 0 2rem; background: var(--bg-light); }
-.overview-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 1.25rem;
+.overview-zones {
+  display: flex;
+  gap: 1rem;
   margin-top: 2rem;
+  align-items: stretch;
+}
+.category-zone {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 1.1rem 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  flex: 1;
+}
+.category-zone { flex: 1; }
+.category-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+.overview-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+.overview-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
 }
 .overview-card {
   background: var(--bg);
@@ -184,34 +211,143 @@
   border-color: #d0d0d0;
 }
 
-/* Hummingbird version toggle */
-.hb-version-toggle {
+/* Hummingbird sub-navigation bar */
+.hb-sub-nav {
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
   display: flex;
-  gap: 0.35rem;
-  margin-top: 0.65rem;
   justify-content: center;
 }
+.hb-sub-nav.hidden { display: none; }
+
+/* Hummingbird version toggle — same Apple style as Falcon */
+.hb-version-toggle {
+  display: inline-flex;
+  position: relative;
+  background: rgba(0,0,0,0.07);
+  border-radius: 18px;
+  padding: 5px;
+  gap: 4px;
+}
+.hb-toggle-indicator {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 14px;
+  background: var(--bg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.14), 0 0.5px 1px rgba(0,0,0,0.08);
+  transition: transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1), width 0.28s cubic-bezier(0.34, 1.2, 0.64, 1), height 0.28s ease;
+  pointer-events: none;
+  z-index: 0;
+}
 .hb-ver-btn {
-  padding: 0.2rem 0.65rem;
-  border-radius: 20px;
-  border: 1.5px solid var(--border);
+  position: relative;
+  z-index: 1;
+  padding: 0.55rem 1.7rem;
+  border-radius: 14px;
+  border: none;
   background: transparent;
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   color: var(--text-light);
-  letter-spacing: 0.02em;
-  transition: all 0.2s;
   font-family: var(--font-main);
+  transition: color 0.18s ease;
+  letter-spacing: 0.01em;
 }
 .hb-ver-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  color: var(--primary);
 }
 .hb-ver-btn:hover:not(.active) {
-  border-color: var(--accent);
-  color: var(--accent);
+  color: var(--primary);
+}
+
+/* Falcon sub-navigation bar */
+.falcon-sub-nav {
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.falcon-sub-nav.hidden {
+  display: none;
+}
+
+/* Falcon segmented control (Apple style) */
+.falcon-toggle {
+  display: inline-flex;
+  position: relative;
+  background: rgba(0,0,0,0.07);
+  border-radius: 18px;
+  padding: 5px;
+  gap: 4px;
+}
+.falcon-toggle-indicator {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 14px;
+  background: var(--bg);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.14), 0 0.5px 1px rgba(0,0,0,0.08);
+  transition: transform 0.28s cubic-bezier(0.34, 1.2, 0.64, 1), width 0.28s cubic-bezier(0.34, 1.2, 0.64, 1), height 0.28s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.falcon-ver-btn {
+  position: relative;
+  z-index: 1;
+  padding: 0.55rem 1.7rem;
+  border-radius: 14px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-light);
+  font-family: var(--font-main);
+  transition: color 0.18s ease;
+  letter-spacing: 0.01em;
+}
+.falcon-ver-btn.active {
+  color: var(--primary);
+}
+.falcon-ver-btn:hover:not(.active) {
+  color: var(--primary);
+}
+
+/* Falcon detail page image container */
+.falcon-detail-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hummingbird detail page image with circle decoration */
+.hb-detail-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hb-detail-img::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(78, 205, 196, 0.28);
+  bottom: 10%;
+  right: 12%;
+  z-index: 0;
+}
+.hb-detail-img img {
+  position: relative;
+  z-index: 1;
+  max-width: 35%;
+  height: auto;
 }
 
 /* Quote Modal */
@@ -335,17 +471,16 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .overview-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-  }
+  .overview-zones { flex-direction: column; }
+  .category-zone:first-child,
+  .category-zone:last-child { flex: unset; }
+  .overview-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+  .overview-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
 }
 
 @media (max-width: 600px) {
-  .overview-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
+  .overview-grid-3 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .overview-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .overview-card-img { height: 110px; padding: 0.75rem; }
   .overview-card-body { padding: 0.75rem; }
   .overview-card-body h3 { font-size: 0.8rem; }
