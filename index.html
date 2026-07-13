@@ -1001,13 +1001,32 @@
 
     const priceEls = () => document.querySelectorAll('.card-price, .product-price, .sticky-bar-price-wrap');
 
+    let countryIsKR = false;
+
+    function applyPriceVisibility() {
+      priceEls().forEach(el => el.style.display = countryIsKR ? '' : 'none');
+    }
+
+    // Country detection: localStorage → geo-IP (independent of language)
+    const savedCountry = localStorage.getItem('country');
+    if (savedCountry) {
+      countryIsKR = savedCountry === 'KR';
+      applyPriceVisibility();
+    } else {
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(data => {
+          const code = data.country_code || 'XX';
+          localStorage.setItem('country', code);
+          countryIsKR = code === 'KR';
+          applyPriceVisibility();
+        })
+        .catch(() => { applyPriceVisibility(); });
+    }
+
     function applyLang(lang) {
       currentLang = lang;
-      const isKR = lang === 'kr';
       const strings = i18nStrings[lang];
-
-      // Price visibility
-      priceEls().forEach(el => el.style.display = isKR ? '' : 'none');
 
       // Navbar indicator + dropdown state
       document.getElementById('lang-current').textContent = isKR ? 'KR' : 'EN';
@@ -1106,16 +1125,9 @@
       localStorage.setItem('lang', lang);
     }
 
-    // Init: localStorage → geo-IP fallback
+    // Init language: localStorage → default KR
     const saved = localStorage.getItem('lang');
-    if (saved) {
-      applyLang(saved);
-    } else {
-      fetch('https://ipapi.co/json/')
-        .then(r => r.json())
-        .then(data => { if (data.country_code !== 'KR') applyLang('en'); })
-        .catch(() => {});
-    }
+    if (saved) applyLang(saved);
 
     // Dropdown toggle
     const langToggle = document.getElementById('lang-toggle');
