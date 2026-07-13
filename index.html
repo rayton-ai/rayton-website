@@ -1026,6 +1026,7 @@
 
     function applyLang(lang) {
       currentLang = lang;
+      const isKR = lang === 'kr';
       const strings = i18nStrings[lang];
 
       // Navbar indicator + dropdown state
