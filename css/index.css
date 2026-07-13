@@ -339,10 +339,11 @@
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: rgba(78, 205, 196, 0.28);
-  bottom: 10%;
-  right: 12%;
+  background: rgba(185, 246, 242, 0.45);
+  bottom: 5%;
+  right: 8%;
   z-index: 0;
+  filter: blur(14px);
 }
 .hb-detail-img img {
   position: relative;
