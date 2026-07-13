@@ -30,6 +30,19 @@
         <li><a href="pages/media.html">MEDIA</a></li>
         <li><a href="pages/faq.html">FAQ</a></li>
       </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn" id="lang-toggle">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="lang-current">KR</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-option active" data-lang="kr">한국어</button>
+          <button class="lang-option" data-lang="en">English</button>
+        </div>
+      </div>
       <button class="nav-toggle" aria-label="메뉴">
         <span></span><span></span><span></span>
       </button>
@@ -41,12 +54,12 @@
     <div class="container">
       <div style="text-align:center;">
         <span class="section-label">LINE-UP</span>
-        <h2 class="section-title">Seyond LiDAR 제품군</h2>
-        <p class="section-desc">제품을 클릭하면 상세 스펙을 확인할 수 있습니다.</p>
+        <h2 class="section-title" data-i18n="section-title">Seyond LiDAR 제품군</h2>
+        <p class="section-desc" data-i18n="section-desc">제품을 클릭하면 상세 스펙을 확인할 수 있습니다.</p>
       </div>
       <div class="overview-zones">
         <div class="category-zone">
-          <p class="category-label">산업안전 / 보안</p>
+          <p class="category-label" data-i18n="cat-industrial">산업안전 / 보안</p>
           <div class="overview-grid-3">
             <div class="overview-card selected" id="falcon-card" data-target="falcon-k">
               <div class="overview-card-img">
@@ -83,7 +96,7 @@
           </div>
         </div>
         <div class="category-zone">
-          <p class="category-label">로보틱스</p>
+          <p class="category-label" data-i18n="cat-robotics">로보틱스</p>
           <div class="overview-grid-3">
             <div class="overview-card" data-target="hummingbird-robot" id="hb-card">
               <div class="overview-card-img hb-circle">
@@ -376,12 +389,12 @@
               </div>
             </div>
             <div class="product-price" style="border-top:1px solid var(--border);margin-top:1.75rem;padding-top:1.25rem;">
-              <p class="price-label">가격</p>
-              <p class="price-inquiry">출시 예정</p>
-              <p class="price-note">* 출시 일정 및 가격은 추후 공지 예정입니다.</p>
+              <p class="price-label" data-i18n="price-label">가격</p>
+              <p class="price-inquiry" data-i18n="price-inquiry">출시 예정</p>
+              <p class="price-note" data-i18n="price-note">* 출시 일정 및 가격은 추후 공지 예정입니다.</p>
             </div>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-              <button class="btn-quote" onclick="openQuote('Hummingbird Mini')">사전 문의</button>
+              <button class="btn-quote" data-i18n="btn-preorder" onclick="openQuote('Hummingbird Mini')">사전 문의</button>
             </div>
           </div>
         </div>
@@ -426,12 +439,12 @@
               </div>
             </div>
             <div class="product-price" style="border-top:1px solid var(--border);margin-top:1.75rem;padding-top:1.25rem;">
-              <p class="price-label">가격</p>
-              <p class="price-inquiry">출시 예정</p>
-              <p class="price-note">* 출시 일정 및 가격은 추후 공지 예정입니다.</p>
+              <p class="price-label" data-i18n="price-label">가격</p>
+              <p class="price-inquiry" data-i18n="price-inquiry">출시 예정</p>
+              <p class="price-note" data-i18n="price-note">* 출시 일정 및 가격은 추후 공지 예정입니다.</p>
             </div>
             <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-              <button class="btn-quote" onclick="openQuote('Hummingbird Mini')">사전 문의</button>
+              <button class="btn-quote" data-i18n="btn-preorder" onclick="openQuote('Hummingbird Mini')">사전 문의</button>
             </div>
           </div>
         </div>
@@ -502,41 +515,41 @@
   <div class="quote-overlay" id="quoteOverlay">
     <div class="quote-modal">
       <button class="quote-close" onclick="closeQuote()">&times;</button>
-      <h3>견적 요청</h3>
+      <h3 data-i18n="modal-title">견적 요청</h3>
       <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
         <div class="quote-product" id="quoteProductName" style="margin:0;"></div>
         <label style="display:flex;align-items:center;gap:0.4rem;font-size:0.85rem;font-weight:500;cursor:pointer;white-space:nowrap;">
           <input type="checkbox" id="otherInquiryCheck" onchange="toggleOtherInquiry(this.checked)" style="width:1rem;height:1rem;cursor:pointer;accent-color:var(--primary);">
-          기타문의
+          <span data-i18n="other-inquiry">기타문의</span>
         </label>
       </div>
       <form id="quoteForm">
         <div class="form-group">
-          <label>회사명 *</label>
-          <input type="text" id="quoteCompany" placeholder="회사명을 입력해주세요" required>
+          <label data-i18n="label-company">회사명 *</label>
+          <input type="text" id="quoteCompany" placeholder="회사명을 입력해주세요" data-i18n-placeholder="ph-company" required>
         </div>
         <div class="form-group">
-          <label>담당자명</label>
-          <input type="text" id="quoteName" placeholder="성함을 입력해주세요">
+          <label data-i18n="label-name">담당자명</label>
+          <input type="text" id="quoteName" placeholder="성함을 입력해주세요" data-i18n-placeholder="ph-name">
         </div>
         <div class="form-group">
-          <label>이메일 *</label>
+          <label data-i18n="label-email">이메일 *</label>
           <input type="email" id="quoteEmail" placeholder="email@company.com" required>
         </div>
         <div class="form-group">
-          <label>연락처</label>
+          <label data-i18n="label-phone">연락처</label>
           <input type="tel" id="quotePhone" placeholder="010-0000-0000">
         </div>
         <div class="form-group" id="qtyGroup">
-          <label id="qtyLabel">주문 수량 *</label>
-          <input type="text" id="quoteQty" placeholder="예: 10대, 100대, 샘플 1대" required>
+          <label id="qtyLabel" data-i18n="label-qty">주문 수량 *</label>
+          <input type="text" id="quoteQty" placeholder="예: 10대, 100대, 샘플 1대" data-i18n-placeholder="ph-qty" required>
         </div>
         <div class="form-group">
-          <label>추가 요청사항</label>
-          <textarea id="quoteMessage" placeholder="납기, 용도, 기술 문의 등 추가 사항을 입력해주세요"></textarea>
+          <label data-i18n="label-message">추가 요청사항</label>
+          <textarea id="quoteMessage" placeholder="납기, 용도, 기술 문의 등 추가 사항을 입력해주세요" data-i18n-placeholder="ph-message"></textarea>
         </div>
         <div class="btn-row">
-          <button type="submit" class="btn btn-primary" style="flex:1;">이메일로 견적 요청 보내기</button>
+          <button type="submit" class="btn btn-primary" style="flex:1;" data-i18n="btn-submit">이메일로 견적 요청 보내기</button>
         </div>
       </form>
     </div>
@@ -551,7 +564,7 @@
           <div class="sticky-bar-price-wrap">
             <span class="sticky-bar-price" id="sticky-product-price">₩14,000,000</span>
           </div>
-          <button class="sticky-bar-btn" id="sticky-quote-btn">견적 받기</button>
+          <button class="sticky-bar-btn" id="sticky-quote-btn" data-i18n="sticky-btn">견적 받기</button>
         </div>
       </div>
     </div>
@@ -605,6 +618,7 @@
   <script src="js/main.js"></script>
   <script>
     let currentProduct = '';
+    let currentLang = 'kr';
 
     const productData = {
       'falcon-k':        { name: 'Falcon K2',       price: '₩15,700,000', inquiry: false },
@@ -756,7 +770,7 @@
 
     function openQuote(productName) {
       currentProduct = productName;
-      document.getElementById('quoteProductName').textContent = productName + ' 견적 요청';
+      document.getElementById('quoteProductName').textContent = productName + (currentLang === 'en' ? ' Quote Request' : ' 견적 요청');
       document.getElementById('otherInquiryCheck').checked = false;
       toggleOtherInquiry(false);
       document.getElementById('quoteOverlay').classList.add('active');
@@ -776,12 +790,12 @@
         qtyInput.disabled = true;
         qtyInput.required = false;
         qtyInput.value = '';
-        qtyLabel.textContent = '주문 수량';
+        qtyLabel.textContent = currentLang === 'en' ? 'Order Quantity' : '주문 수량';
         qtyGroup.style.opacity = '0.4';
       } else {
         qtyInput.disabled = false;
         qtyInput.required = true;
-        qtyLabel.textContent = '주문 수량 *';
+        qtyLabel.textContent = currentLang === 'en' ? 'Order Quantity *' : '주문 수량 *';
         qtyGroup.style.opacity = '1';
       }
     }
@@ -825,16 +839,291 @@
   </script>
 
   <script>
-    fetch('https://ipapi.co/json/')
-      .then(r => r.json())
-      .then(data => {
-        if (data.country_code !== 'KR') {
-          document.querySelectorAll('.card-price, .product-price, .sticky-bar-price-wrap').forEach(el => {
-            el.style.display = 'none';
-          });
+    // UI string translations
+    const i18nStrings = {
+      kr: {
+        'section-title': 'Seyond LiDAR 제품군',
+        'section-desc': '제품을 클릭하면 상세 스펙을 확인할 수 있습니다.',
+        'cat-industrial': '산업안전 / 보안',
+        'cat-robotics': '로보틱스',
+        'price-label': '가격',
+        'price-inquiry': '출시 예정',
+        'price-note': '* 출시 일정 및 가격은 추후 공지 예정입니다.',
+        'btn-preorder': '사전 문의',
+        'modal-title': '견적 요청',
+        'other-inquiry': '기타문의',
+        'label-company': '회사명 *',
+        'label-name': '담당자명',
+        'label-email': '이메일 *',
+        'label-phone': '연락처',
+        'label-qty': '주문 수량 *',
+        'label-message': '추가 요청사항',
+        'btn-submit': '이메일로 견적 요청 보내기',
+        'sticky-btn': '견적 받기',
+        'ph-company': '회사명을 입력해주세요',
+        'ph-name': '성함을 입력해주세요',
+        'ph-qty': '예: 10대, 100대, 샘플 1대',
+        'ph-message': '납기, 용도, 기술 문의 등 추가 사항을 입력해주세요',
+      },
+      en: {
+        'section-title': 'Seyond LiDAR Products',
+        'section-desc': 'Click a product to view its detailed specifications.',
+        'cat-industrial': 'Industrial Safety / Security',
+        'cat-robotics': 'Robotics',
+        'price-label': 'Price',
+        'price-inquiry': 'Coming Soon',
+        'price-note': '* Launch schedule and pricing will be announced.',
+        'btn-preorder': 'Pre-order Inquiry',
+        'modal-title': 'Request a Quote',
+        'other-inquiry': 'Other Inquiry',
+        'label-company': 'Company *',
+        'label-name': 'Contact Name',
+        'label-email': 'Email *',
+        'label-phone': 'Phone',
+        'label-qty': 'Order Quantity *',
+        'label-message': 'Additional Notes',
+        'btn-submit': 'Send Quote Request via Email',
+        'sticky-btn': 'Get a Quote',
+        'ph-company': 'Enter company name',
+        'ph-name': 'Enter your name',
+        'ph-qty': 'e.g., 10 units, 100 units, 1 sample',
+        'ph-message': 'Delivery schedule, use case, technical inquiries, etc.',
+      }
+    };
+
+    // Spec table label translations (first column)
+    const specLabelMap = {
+      '감지 범위 (최대)': 'Max Detection Range',
+      '감지 범위 (10% 반사율)': 'Range @ 10% Reflectivity',
+      '감지 범위': 'Detection Range',
+      '시야각 non-ROI (H×V)': 'Non-ROI FOV (H×V)',
+      '시야각 ROI (H×V)': 'ROI FOV (H×V)',
+      '시야각 (H×V)': 'FOV (H×V)',
+      '시야각 (FOV)': 'FOV',
+      '시야각': 'FOV',
+      '해상도 ROI (H×V)': 'ROI Resolution (H×V)',
+      'ROI 해상도 (H×V)': 'ROI Resolution (H×V)',
+      '해상도 (H×V)': 'Resolution (H×V)',
+      '스캐닝 라인': 'Scan Lines',
+      '프레임 레이트': 'Frame Rate',
+      '파장 / 안전 등급': 'Wavelength / Safety Class',
+      '파장': 'Wavelength',
+      '동작 온도': 'Operating Temp.',
+      '방수방진': 'IP Rating',
+      '크기 (H×W×D)': 'Dimensions (H×W×D)',
+      '크기 / 무게': 'Dimensions / Weight',
+      '무게': 'Weight',
+      '소비 전력': 'Power Consumption',
+      '채널 수': 'Channels',
+      '인터페이스': 'Interface',
+      '시간 동기화': 'Time Sync',
+      '픽셀 수 (H×V)': 'Pixels (H×V)',
+      '기술': 'Technology',
+      '적용 분야': 'Applications',
+    };
+
+    // Spec table value translations (second column, Korean values only)
+    const specValueMap = {
+      '광각 (Wide-angle)': 'Wide-angle',
+      'Side detection, 로봇, 산업자동화': 'Side detection, Robotics, Industrial Automation',
+      '0.1m ~ 10m (실내, 10% 반사율)': '0.1m – 10m (Indoor, 10% reflectivity)',
+      '200m @ 100 klx 직사광': '200m @ 100 klx direct sunlight',
+      '10 FPS (5~20 FPS 조정 가능)': '10 FPS (adjustable: 5–20 FPS)',
+      'IP67 (본체), IP69K (윈도우)': 'IP67 (body), IP69K (window)',
+      '152ch (최대 216ch)': '152ch (up to 216ch)',
+    };
+
+    // Product description paragraph translations
+    const descMap = {
+      'Falcon K2는 Seyond의 포워드 엔지니어링으로 개발된 오토머티브 등급 LiDAR입니다. 최대 500m의 초장거리 감지와 조절 가능한 ROI(관심 영역)에서 포인트 밀도를 극대화하여 도로 위 물체를 정밀하게 추적합니다.':
+        'Developed through Seyond\'s forward engineering, the Falcon K2 is an automotive-grade LiDAR. It achieves ultra-long-range detection up to 500m and maximizes point density within an adjustable ROI to precisely track objects on the road.',
+      '1550nm 파장의 Eye-safe 레이저와 뛰어난 환경 적응력으로 L2+ 자율주행 및 스마트 교통 인프라 구축의 핵심 센서로, 대량 양산 체제가 갖춰진 제품입니다.':
+        'With an eye-safe 1550nm laser and outstanding environmental adaptability, it serves as a core sensor for L2+ autonomous driving and smart transportation infrastructure — available in mass production.',
+      'Falcon K Lite는 Falcon K1 LiDAR를 기반으로 Seyond이 개발한 초고성능 산업용 LiDAR로, V2X, 스마트 시티, 스마트 하이웨이 등 다양한 환경에 최적화되어 있습니다.':
+        'Built on the Falcon K1 LiDAR, Falcon K Lite is a high-performance industrial LiDAR developed by Seyond, optimized for V2X, smart cities, smart highways, and more.',
+      '500m 초장거리 감지와 ROI 모드에서 0.09°×0.15°의 초고해상도로 원거리 소형 물체를 정밀하게 인식합니다. 유연한 ROI 조정으로 장착 위치에 관계없이 높은 다양성의 포인트 클라우드를 제공합니다.':
+        'With up to 500m detection range and 0.09°×0.15° ultra-high resolution in ROI mode, it precisely detects small distant objects. Flexible ROI adjustment provides high-density point clouds regardless of mounting position.',
+      'Falcon K2 Ultra는 자체 설계 ASIC 칩 기반으로 고해상도와 초장거리 감지 능력을 동시에 구현한 플래그십 LiDAR입니다. 최대 900m의 감지 거리와 8가지 스캔 패턴 실시간 전환을 지원합니다.':
+        'Powered by a custom-designed ASIC chip, the Falcon K2 Ultra is Seyond\'s flagship LiDAR that achieves both high resolution and ultra-long-range detection simultaneously. It supports detection up to 900m with real-time switching between 8 scan patterns.',
+      'ADAS, 스마트 시티, 고속도로, 철도, 항만, 광산 등 다양한 분야에 적합하며, 자동차 등급 기준으로 설계되어 장기적인 안정성과 신뢰성을 보장합니다.':
+        'Designed to automotive-grade standards for long-term stability and reliability, it is suited for ADAS, smart cities, highways, railways, ports, mines, and beyond.',
+      'Robin W는 광각 감지에 최적화된 905nm 계열의 LiDAR 센서입니다. Side detection 및 근거리 광각 모니터링에 탁월한 성능을 발휘합니다.':
+        'Robin W is a 905nm LiDAR sensor optimized for wide-angle detection. It delivers excellent performance for side detection and short-range wide-angle monitoring.',
+      '컴팩트한 디자인으로 다양한 환경에 유연하게 설치 가능하며, 대량 양산을 통해 안정적인 품질과 가격 경쟁력을 확보하고 있습니다.':
+        'Its compact design enables flexible installation in diverse environments, and mass production ensures stable quality and competitive pricing.',
+      'Robin E1X Plus는 E1X의 성능을 한 단계 높인 차세대 장거리 LiDAR입니다. 192라인 단방향 스캐닝과 0.1°×0.1° 초고해상도로 최대 250m 감지 범위를 제공하며, 초당 2,304,000포인트의 고밀도 포인트 클라우드를 생성합니다.':
+        'Robin E1X Plus is the next-generation long-range LiDAR, elevating E1X performance to the next level. With 192-line unidirectional scanning and 0.1°×0.1° ultra-high resolution, it provides up to 250m detection range and generates 2,304,000 points per second.',
+      '31mm×107mm×101mm의 초소형 폼팩터와 ~8W 저전력 설계로 차량 탑재 및 도로변 설치 모두에 최적화되어 있으며, Client SDK와 ROS/ROS2 드라이버를 지원합니다.':
+        'The ultra-compact 31×107×101mm form factor and ~8W low-power design optimize it for both vehicle mounting and roadside installation. Supports Client SDK and ROS/ROS2 drivers.',
+      'Hummingbird 180는 Seyond의 초광각 솔리드 스테이트 LiDAR입니다. 50×25×26mm, 120g의 소형 폼팩터에 3W 초저전력 설계로, 공간과 전력이 제한된 환경에서도 사용 가능합니다.':
+        'Hummingbird 180 is Seyond\'s ultra-wide-angle solid-state LiDAR. In a compact 50×25×26mm, 120g form factor with 3W ultra-low-power design, it operates even in space- and power-constrained environments.',
+      'USB Type-C 단일 케이블로 전원 공급 및 데이터 전송을 동시에 처리합니다. 실내 근거리 정밀 감지와 소형 로봇·드론·스마트 기기에 최적화된 제품입니다.':
+        'A single USB Type-C cable handles both power supply and data transfer simultaneously. Optimized for precise indoor short-range sensing and small robots, drones, and smart devices.',
+      'Hummingbird Mini는 Seyond의 초소형 완전 솔리드 스테이트 LiDAR입니다. 50×20×26mm, 60g의 극소형 폼팩터에 <2W 초저전력 설계로, 공간과 전력이 제한된 환경에서도 유연하게 통합 가능합니다.':
+        'Hummingbird Mini is Seyond\'s ultra-compact fully solid-state LiDAR. In an extremely small 50×20×26mm, 60g form factor with <2W ultra-low-power design, it integrates flexibly even in space- and power-constrained environments.',
+      '모듈식 설계로 최대 180° 커버리지까지 확장 가능하며, USB Type-C 단일 케이블로 전원 공급 및 데이터 전송을 동시에 처리합니다. 실내 근거리 정밀 감지와 소형 로봇·드론·스마트 기기에 최적화된 제품입니다.':
+        'Its modular design enables expansion up to 180° coverage, while a single USB Type-C cable handles both power and data transfer. Optimized for precise indoor short-range sensing and small robots, drones, and smart devices.',
+      'Hummingbird HD1은 자동차 OEM을 위한 완전 솔리드 스테이트 LiDAR입니다. 혁신적인 전자 스캐닝 설계로 기계적 부품 없이 뛰어난 내구성과 신뢰성을 보장하며, -40°C~85°C 광범위 동작 온도를 지원합니다.':
+        'Hummingbird HD1 is a fully solid-state LiDAR for automotive OEMs. Its innovative electronic scanning design ensures exceptional durability and reliability without mechanical components, supporting a wide operating temperature range of -40°C to 85°C.',
+      '140°×100° 초광각 시야각과 0.55°×0.52° 고해상도로 도킹, 주차 보조, 보행자 감지 등 고밀도 환경에서의 근거리 정밀 3D 인지를 실현합니다.':
+        'With a 140°×100° ultra-wide FOV and 0.55°×0.52° high resolution, it enables precise short-range 3D perception in dense environments — from docking and parking assistance to pedestrian detection.',
+      'Hummingbird HD1-R은 로봇(AMR/AGV) 전용으로 설계된 완전 솔리드 스테이트 LiDAR입니다. 37×92×45mm의 초소형 폼팩터로 다양한 로봇 플랫폼에 유연하게 통합 가능합니다.':
+        'Hummingbird HD1-R is a fully solid-state LiDAR designed specifically for robots (AMR/AGV). Its ultra-compact 37×92×45mm form factor enables flexible integration into various robot platforms.',
+      'Automotive 버전과 동일한 140°×100° 초광각 시야각 및 192CH를 제공하면서도 더 작은 크기와 낮은 소비 전력(≤6W)으로 배터리 구동 로봇에 최적화되었습니다.':
+        'While offering the same 140°×100° ultra-wide FOV and 192CH as the Automotive version, it is optimized for battery-powered robots with a smaller footprint and lower power consumption (≤6W).',
+    };
+
+    // Callout box translations (keyed by strong text)
+    const calloutMap = {
+      '조절 가능한 ROI 지원': { strong: 'Adjustable ROI Support', body: 'Flexibly configure the region of interest for precision long-range detection of small objects · ROS/ROS2 driver included' },
+      '스캔 패턴 8종 실시간 전환 지원': { strong: '8 Scan Patterns with Real-time Switching', body: '26°/22°/21°/20° FOV, 1x/2x ROI, 3Hz low-speed mode and more operational modes available' },
+      'E1X 대비 업그레이드 포인트': { strong: 'Key Upgrades over E1X', body: 'Scan lines 96→192 (2× improvement) · Vertical FOV expanded to 19.2° · Client SDK added' },
+      '최대 180° 커버리지': { strong: 'Up to 180° Coverage', body: '' },
+      '모듈 확장으로 최대 180° 커버리지': { strong: 'Up to 180° Coverage via Module Expansion', body: 'Single unit: 65°×54° · Multi-module configuration: up to 180° wide-angle coverage' },
+    };
+
+    // Application tag translations (Korean → English)
+    const tagMap = {
+      '소형 로봇 / AMR': 'Small Robot / AMR',
+      '드론': 'Drone',
+      '스마트 기기': 'Smart Device',
+      '실내 매핑': 'Indoor Mapping',
+      '제스처 인식': 'Gesture Recognition',
+    };
+
+    const priceEls = () => document.querySelectorAll('.card-price, .product-price, .sticky-bar-price-wrap');
+
+    function applyLang(lang) {
+      currentLang = lang;
+      const isKR = lang === 'kr';
+      const strings = i18nStrings[lang];
+
+      // Price visibility
+      priceEls().forEach(el => el.style.display = isKR ? '' : 'none');
+
+      // Navbar indicator + dropdown state
+      document.getElementById('lang-current').textContent = isKR ? 'KR' : 'EN';
+      document.querySelectorAll('.lang-option').forEach(b => {
+        b.classList.toggle('active', b.dataset.lang === lang);
+      });
+
+      // data-i18n text swap
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (strings[key] !== undefined) el.textContent = strings[key];
+      });
+
+      // data-i18n-placeholder swap
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (strings[key] !== undefined) el.placeholder = strings[key];
+      });
+
+      // Spec table label swap (first-column cells in product details)
+      document.querySelectorAll('.product-detail table td:first-child').forEach(td => {
+        const text = td.textContent.trim();
+        if (isKR) {
+          if (td.dataset.krText) td.textContent = td.dataset.krText;
+        } else {
+          if (!td.dataset.krText) td.dataset.krText = text;
+          const en = specLabelMap[td.dataset.krText];
+          if (en) td.textContent = en;
         }
-      })
-      .catch(() => {});
+      });
+
+      // Spec table value swap (second-column cells, Korean values only)
+      document.querySelectorAll('.product-detail table td:last-child').forEach(td => {
+        const text = td.textContent.trim();
+        if (isKR) {
+          if (td.dataset.krText) td.textContent = td.dataset.krText;
+        } else {
+          if (!td.dataset.krText && specValueMap[text]) td.dataset.krText = text;
+          if (td.dataset.krText) {
+            const en = specValueMap[td.dataset.krText];
+            if (en) td.textContent = en;
+          }
+        }
+      });
+
+      // Product description paragraphs
+      document.querySelectorAll('.product-detail p').forEach(p => {
+        if (isKR) {
+          if (p.dataset.krText) p.textContent = p.dataset.krText;
+        } else {
+          const text = p.textContent.trim();
+          // "적용 분야" heading
+          if (text === '적용 분야') {
+            if (!p.dataset.krText) p.dataset.krText = text;
+            p.textContent = 'Applications';
+            return;
+          }
+          // Description paragraphs
+          if (!p.dataset.krText && descMap[text]) p.dataset.krText = text;
+          if (p.dataset.krText) {
+            const en = descMap[p.dataset.krText];
+            if (en) p.textContent = en;
+          }
+        }
+      });
+
+      // Callout box swap (divs with a <strong> child inside product details)
+      document.querySelectorAll('.product-detail div[style*="background:var(--bg-light)"]').forEach(box => {
+        const strong = box.querySelector('strong');
+        if (!strong) return;
+        if (isKR) {
+          if (box.dataset.krHtml) box.innerHTML = box.dataset.krHtml;
+        } else {
+          const krKey = strong.dataset.krText || strong.textContent.trim();
+          const enData = calloutMap[krKey];
+          if (enData) {
+            if (!box.dataset.krHtml) box.dataset.krHtml = box.innerHTML;
+            box.innerHTML = `<strong style="color:var(--primary);">${enData.strong}</strong>${enData.body ? '<br>' + enData.body : ''}`;
+          }
+        }
+      });
+
+      // Application tag spans
+      document.querySelectorAll('.product-detail span[style*="background:var(--bg-light)"]').forEach(span => {
+        const text = span.textContent.trim();
+        if (isKR) {
+          if (span.dataset.krText) span.textContent = span.dataset.krText;
+        } else {
+          if (tagMap[text]) {
+            if (!span.dataset.krText) span.dataset.krText = text;
+            span.textContent = tagMap[text];
+          }
+        }
+      });
+
+      localStorage.setItem('lang', lang);
+    }
+
+    // Init: localStorage → geo-IP fallback
+    const saved = localStorage.getItem('lang');
+    if (saved) {
+      applyLang(saved);
+    } else {
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(data => { if (data.country_code !== 'KR') applyLang('en'); })
+        .catch(() => {});
+    }
+
+    // Dropdown toggle
+    const langToggle = document.getElementById('lang-toggle');
+    const langDropdown = document.getElementById('lang-dropdown');
+    langToggle.addEventListener('click', e => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', () => langDropdown.classList.remove('open'));
+
+    document.querySelectorAll('.lang-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        applyLang(btn.dataset.lang);
+        langDropdown.classList.remove('open');
+      });
+    });
   </script>
   <button class="back-to-top" aria-label="맨 위로">↑</button>
 </body>
